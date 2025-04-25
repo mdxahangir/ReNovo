@@ -1,0 +1,158 @@
+/* Header Styles */
+header {
+    background-color: white;
+    /* Header height variables are defined but not directly applied to header element */
+}
+
+.container-fluid {
+    max-width: 1600px;
+}
+
+/* Logo styles */
+.main-logo img {
+    max-width: 100%;
+    height: 80px;
+}
+
+/* Search bar styles */
+.search-bar {
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.search-bar .form-select,
+.search-bar .form-control {
+    background-color: transparent;
+    border: none;
+}
+
+/* Support box styles */
+.support-box {
+    text-align: right;
+}
+
+.support-box .fs-6 {
+    font-size: 0.875rem;
+}
+
+.support-box h5 {
+    margin-bottom: 0;
+}
+
+/* Icon buttons styles */
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+/* Cart dropdown styles */
+.cart .dropdown-toggle {
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    line-height: 1;
+}
+
+.cart .fs-6 {
+    font-size: 0.875rem;
+}
+
+.cart .fs-5 {
+    font-size: 1.25rem;
+}
+
+.cart .fw-bold {
+    font-weight: 700 !important;
+}
+
+/* Main menu styles */
+.main-menu .navbar-toggler {
+    border: none;
+    padding: 0;
+}
+
+.main-menu .offcanvas {
+    max-width: 80%;
+}
+
+.main-menu .offcanvas-body {
+    padding: 1rem;
+}
+
+.filter-categories {
+    border: none;
+    margin-bottom: 0;
+    margin-right: 1rem;
+}
+
+.menu-list {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0;
+}
+
+.menu-list .nav-link {
+    color: #333;
+    padding: 0.5rem 1rem;
+}
+
+.menu-list .nav-link:hover,
+.menu-list .nav-link.active {
+    color: #000;
+}
+
+.dropdown-menu {
+    padding: 0.5rem 0;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 0.5rem 1.5rem;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 991px) {
+    .offcanvas-body .nav-item {
+        font-weight: 700;
+        border-bottom: 1px solid #d1d1d1;
+    }
+    
+    .offcanvas-body .filter-categories {
+        width: 100%;
+        margin-bottom: 20px !important;
+        border: 1px solid #d1d1d1 !important;
+        padding: 14px;
+        border-radius: 8px;
+    }
+    
+    .dropdown-menu {
+        padding: 0;
+        border: none;
+        line-height: 1.4;
+        font-size: 0.9em;
+    }
+    
+    .dropdown-menu a {
+        padding-left: 0;
+    }
+    
+    .dropdown-toggle::after {
+        position: absolute;
+        right: 0;
+        top: 21px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --header-height: 100px;
+        --header-height-min: 80px;
+    }
+}

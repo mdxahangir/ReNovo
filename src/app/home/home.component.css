@@ -1,0 +1,132 @@
+/* Footer Styles */
+footer {
+    padding: 3rem 0;
+}
+
+.footer-menu {
+    margin-bottom: 2rem;
+}
+
+.footer-menu img {
+    max-width: 100%;
+    height: auto;
+}
+
+.widget-title {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+.menu-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu-item {
+    margin-bottom: 0.75rem;
+}
+
+.menu-item .nav-link {
+    color: var(--light-dark-color);
+    padding: 0.25rem 0;
+    transition: color 0.3s ease;
+}
+
+.menu-item .nav-link:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    margin-top: 3rem;
+}
+
+.social-links ul {
+    display: flex;
+    gap: 0.5rem;
+    padding-left: 0;
+}
+
+.btn-outline-light {
+    --bs-btn-color: #747474;
+    --bs-btn-border-color: #EFEFEF;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #EFEFEF;
+    --bs-btn-hover-border-color: #EFEFEF;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #EFEFEF;
+    --bs-btn-active-border-color: #EFEFEF;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#footer-bottom {
+    background-color: var(--light-grey-color);
+    padding: 1.5rem 0;
+}
+
+.copyright p,
+.credit-link p {
+    margin-bottom: 0;
+    color: var(--light-dark-color);
+    font-size: 0.875rem;
+}
+
+.credit-link a {
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.credit-link a:hover {
+    color: var(--accent-color);
+}
+
+/* Newsletter Form */
+form[role="newsletter"] {
+    display: flex;
+}
+
+form[role="newsletter"] .form-control {
+    background-color: var(--light-grey-color);
+    border: none;
+    border-radius: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+form[role="newsletter"] .btn-dark {
+    border-radius: 0;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 767.98px) {
+    .footer-menu {
+        text-align: center;
+    }
+    
+    .social-links ul {
+        justify-content: center;
+    }
+    
+    .credit-link {
+        text-align: center !important;
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .text-md-end {
+        text-align: right !important;
+    }
+}
