@@ -49,11 +49,19 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",             
+              "src/assets/css/normalize.css",            
+              "src/assets/css/style.css",
+              "src/assets/css/vendor.css",
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/js/jquery-1.11.0.min.js",
+              "src/assets/js/modernizr.js",
+              "src/assets/js/plugins.js",
+              "src/assets/js/script.js"
+             
             ]
           },
           "configurations": {
