@@ -156,3 +156,123 @@ header {
         --header-height-min: 80px;
     }
 }
+
+
+
+
+
+.alibaba-navbar {
+    height: 72px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.alibaba-logo {
+    height: 30px;
+    margin-right: 20px;
+}
+
+.search-container {
+    flex-grow: 1;
+    max-width: 720px;
+}
+
+.search-input {
+    height: 48px;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid #FF6A00;
+    border-right: none;
+    padding-left: 16px;
+    font-size: 14px;
+}
+
+.search-input:focus {
+    box-shadow: none;
+    border-color: #FF6A00;
+}
+
+.search-button {
+    height: 48px;
+    background-color: #FF6A00;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    border: none;
+    padding: 0 24px;
+    font-weight: 500;
+}
+
+.search-button:hover {
+    background-color: #e05d00;
+}
+
+.nav-divider {
+    width: 1px;
+    height: 20px;
+    background-color: #e0e0e0;
+    margin: 0 12px;
+}
+
+.nav-item-text {
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.nav-item-text:hover {
+    color: #FF6A00;
+}
+
+.flag-icon {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+    margin-left: 6px;
+}
+
+.sign-in-link {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.sign-in-link:hover {
+    color: #FF6A00;
+}
+
+.sign-up-button {
+    background-color: #FF6A00;
+    color: white;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 14px;
+    border: none;
+    white-space: nowrap;
+}
+
+.sign-up-button:hover {
+    background-color: #e05d00;
+    color: white;
+}
+
+.secondary-nav {
+    height: 40px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.secondary-nav-link {
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.secondary-nav-link:hover {
+    color: #FF6A00;
+}
+
+.language-dropdown::after {
+    display: none;
+}
+.nav-item-text{
+    font: size 10px;
+}
