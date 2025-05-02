@@ -1,0 +1,60 @@
+/* Add your MDBootstrap or custom styling here */
+.form-outline {
+  position: relative;
+}
+/* Center the form */
+form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* Space between form elements */
+.form-outline {
+  margin-bottom: 20px;
+}
+
+/* Submit button */
+.btn-primary {
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Social icons spacing */
+.btn-floating {
+  font-size: 18px;
+  color: #3b5998;
+  transition: color 0.2s ease-in-out;
+}
+
+.btn-floating:hover {
+  color: #1a1a1a;
+}
+
+/* Remember me and forgot password alignment */
+.row.mb-4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Links */
+a {
+  color: #3b5998;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Label styling */
+.form-label {
+  font-weight: 500;
+  margin-top: 5px;
+}

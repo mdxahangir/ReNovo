@@ -1,20 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserCrudComponent } from './user-crud/user-crud.component';
-import { AdminService } from './admin-services/admin.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
-  declarations: [
-    AdminLoginComponent,
+  declarations: [  
     AdminDashboardComponent,
     UserCrudComponent,
+
   ],
-  imports: [
-    CommonModule,
-  ]
+  imports: [CommonModule, FormsModule, HttpClientModule],
+  exports : [
+    AdminDashboardComponent,
+    UserCrudComponent,
+
+  ], 
+  
 })
 export class AdminModule { }
