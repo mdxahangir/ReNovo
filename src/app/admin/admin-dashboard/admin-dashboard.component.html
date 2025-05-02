@@ -1,1 +1,404 @@
-<p>admin-dashboard works!</p>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar w-250 d-flex flex-column">
+            <div class="logo">
+                <i class="fas fa-store"></i> Ali<span>Seller</span>
+            </div>
+            <div class="flex-grow-1 overflow-auto p-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-box-open"></i> Storefront Management
+                        </a>
+                        <ul class="sub-menu ps-4">
+                            <li><a href="#" class="nav-link">Product Listings</a></li>
+                            <li><a href="#" class="nav-link">Store Customization</a></li>
+                            <li><a href="#" class="nav-link">Inventory Control</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-shopping-cart"></i> Order Management
+                        </a>
+                        <ul class="sub-menu ps-4">
+                            <li><a href="#" class="nav-link">Order Processing</a></li>
+                            <li><a href="#" class="nav-link">Payment Tracking</a></li>
+                            <li><a href="#" class="nav-link">Shipping Integration</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-users"></i> Customer Engagement
+                        </a>
+                        <ul class="sub-menu ps-4">
+                            <li><a href="#" class="nav-link">Inquiry Management</a></li>
+                            <li><a href="#" class="nav-link">Messaging System</a></li>
+                            <li><a href="#" class="nav-link">Feedback & Reviews</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-chart-line"></i> Analytics & Insights
+                        </a>
+                        <ul class="sub-menu ps-4">
+                            <li><a href="#" class="nav-link">Performance Metrics</a></li>
+                            <li><a href="#" class="nav-link">Buyer Behavior</a></li>
+                            <li><a href="#" class="nav-link">Market Trends</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-bullhorn"></i> Marketing & Promotion
+                        </a>
+                        <ul class="sub-menu ps-4">
+                            <li><a href="#" class="nav-link">Advertising Tools</a></li>
+                            <li><a href="#" class="nav-link">Promotional Campaigns</a></li>
+                            <li><a href="#" class="nav-link">SEO Optimization</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-user-cog"></i> Account & Compliance
+                        </a>
+                        <ul class="sub-menu ps-4">
+                            <li><a href="#" class="nav-link">Profile Settings</a></li>
+                            <li><a href="#" class="nav-link">Verification</a></li>
+                            <li><a href="#" class="nav-link">Compliance Monitoring</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-question-circle"></i> Support & Resources
+                        </a>
+                        <ul class="sub-menu ps-4">
+                            <li><a href="#" class="nav-link">Help Center</a></li>
+                            <li><a href="#" class="nav-link">Seller Training</a></li>
+                            <li><a href="#" class="nav-link">Community Forums</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content flex-grow-1">
+            <!-- Top Bar -->
+            <div class="top-bar d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Seller Dashboard</h4>
+                <div class="d-flex align-items-center">
+                    <div class="input-group me-3" style="width: 300px;">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i> Seller Account
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="value">1,248</div>
+                        <div class="label">Total Products</div>
+                        <div class="mt-2 text-success">
+                            <i class="fas fa-arrow-up"></i> 12% from last month
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="value">326</div>
+                        <div class="label">New Orders</div>
+                        <div class="mt-2 text-success">
+                            <i class="fas fa-arrow-up"></i> 8% from last week
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="value">$24,580</div>
+                        <div class="label">Revenue</div>
+                        <div class="mt-2 text-danger">
+                            <i class="fas fa-arrow-down"></i> 3% from last month
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="value">94%</div>
+                        <div class="label">Positive Feedback</div>
+                        <div class="mt-2 text-success">
+                            <i class="fas fa-arrow-up"></i> 2% from last quarter
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="row mt-4">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Recent Orders</h5>
+                            <a href="#" class="btn btn-sm btn-alibaba">View All</a>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Order ID</th>
+                                            <th>Customer</th>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#ALB-1001</td>
+                                            <td>Global Trading Co.</td>
+                                            <td>2023-06-15</td>
+                                            <td>$1,250.00</td>
+                                            <td><span class="badge bg-success">Shipped</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-primary">Track</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ALB-1002</td>
+                                            <td>Ocean Imports Ltd.</td>
+                                            <td>2023-06-14</td>
+                                            <td>$3,480.00</td>
+                                            <td><span class="badge bg-warning text-dark">Processing</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-primary">Details</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ALB-1003</td>
+                                            <td>Euro Retail Group</td>
+                                            <td>2023-06-14</td>
+                                            <td>$890.00</td>
+                                            <td><span class="badge bg-info">Paid</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-primary">Invoice</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ALB-1004</td>
+                                            <td>Asia Wholesale</td>
+                                            <td>2023-06-13</td>
+                                            <td>$5,670.00</td>
+                                            <td><span class="badge bg-danger">Cancelled</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-primary">Refund</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ALB-1005</td>
+                                            <td>Africa Distributors</td>
+                                            <td>2023-06-12</td>
+                                            <td>$2,340.00</td>
+                                            <td><span class="badge bg-success">Delivered</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-primary">Review</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Quick Actions</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-alibaba mb-2">
+                                    <i class="fas fa-plus me-2"></i> Add New Product
+                                </button>
+                                <button class="btn btn-outline-primary mb-2">
+                                    <i class="fas fa-bullhorn me-2"></i> Create Promotion
+                                </button>
+                                <button class="btn btn-outline-success mb-2">
+                                    <i class="fas fa-chart-line me-2"></i> View Analytics
+                                </button>
+                                <button class="btn btn-outline-info mb-2">
+                                    <i class="fas fa-envelope me-2"></i> Check Messages
+                                </button>
+                                <button class="btn btn-outline-warning mb-2">
+                                    <i class="fas fa-exclamation-circle me-2"></i> Pending Orders
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Messages -->
+                    <div class="card mt-4">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Recent Messages</h5>
+                            <a href="#" class="btn btn-sm btn-alibaba">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <img src="https://via.placeholder.com/40" class="rounded-circle" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-0">Global Trading Co.</h6>
+                                    <p class="mb-0 text-muted">Can we get bulk discount for 500 units?</p>
+                                    <small class="text-muted">2 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <img src="https://via.placeholder.com/40" class="rounded-circle" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-0">Ocean Imports</h6>
+                                    <p class="mb-0 text-muted">When will my order be shipped?</p>
+                                    <small class="text-muted">5 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <img src="https://via.placeholder.com/40" class="rounded-circle" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-0">Euro Retail</h6>
+                                    <p class="mb-0 text-muted">Do you have product certification?</p>
+                                    <small class="text-muted">1 day ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Performance -->
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Top Performing Products</h5>
+                            <div>
+                                <select class="form-select form-select-sm" style="width: 150px;">
+                                    <option>Last 7 Days</option>
+                                    <option>Last 30 Days</option>
+                                    <option selected>Last 90 Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Views</th>
+                                            <th>Orders</th>
+                                            <th>Conversion</th>
+                                            <th>Revenue</th>
+                                            <th>Rating</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://via.placeholder.com/40" class="rounded me-2"
+                                                        alt="...">
+                                                    <div>Industrial Air Compressor</div>
+                                                </div>
+                                            </td>
+                                            <td>1,248</td>
+                                            <td>86</td>
+                                            <td>6.9%</td>
+                                            <td>$12,480</td>
+                                            <td><i class="fas fa-star text-warning"></i> 4.8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://via.placeholder.com/40" class="rounded me-2"
+                                                        alt="...">
+                                                    <div>Hydraulic Power Unit</div>
+                                                </div>
+                                            </td>
+                                            <td>982</td>
+                                            <td>64</td>
+                                            <td>6.5%</td>
+                                            <td>$9,820</td>
+                                            <td><i class="fas fa-star text-warning"></i> 4.6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://via.placeholder.com/40" class="rounded me-2"
+                                                        alt="...">
+                                                    <div>CNC Machine Parts</div>
+                                                </div>
+                                            </td>
+                                            <td>876</td>
+                                            <td>52</td>
+                                            <td>5.9%</td>
+                                            <td>$7,880</td>
+                                            <td><i class="fas fa-star text-warning"></i> 4.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://via.placeholder.com/40" class="rounded me-2"
+                                                        alt="...">
+                                                    <div>Safety Gloves (100pk)</div>
+                                                </div>
+                                            </td>
+                                            <td>754</td>
+                                            <td>48</td>
+                                            <td>6.4%</td>
+                                            <td>$3,770</td>
+                                            <td><i class="fas fa-star text-warning"></i> 4.7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://via.placeholder.com/40" class="rounded me-2"
+                                                        alt="...">
+                                                    <div>Steel Pipe Fittings</div>
+                                                </div>
+                                            </td>
+                                            <td>642</td>
+                                            <td>36</td>
+                                            <td>5.6%</td>
+                                            <td>$2,890</td>
+                                            <td><i class="fas fa-star text-warning"></i> 4.4</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

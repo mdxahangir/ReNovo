@@ -7,6 +7,9 @@ import { Admin } from 'src/app/core/Models/admins/admin.models';
   providedIn: 'root'
 })
 export class AdminService {
+  isLoggedIn(): boolean {
+    return localStorage.getItem('isLoggedIn') === 'true';
+  }
 
   private apiUrl = 'http://localhost:3000/admins';
 

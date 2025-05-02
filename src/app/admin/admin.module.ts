@@ -9,13 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [  
-    AdminDashboardComponent,
+
     UserCrudComponent,
 
   ],
   imports: [CommonModule, FormsModule, HttpClientModule],
   exports : [
-    AdminDashboardComponent,
+  
     UserCrudComponent,
 
   ], 

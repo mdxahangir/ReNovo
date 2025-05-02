@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin-services/admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -11,7 +12,7 @@ export class AdminLoginComponent implements OnInit {
   email = '';
   password = '';
 
-  constructor(private adminService: AdminService) {}
+  constructor(private router:Router, private adminService: AdminService) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
@@ -19,7 +20,8 @@ export class AdminLoginComponent implements OnInit {
   onLogin(): void {
     this.adminService.login(this.email, this.password).subscribe(admins => {
       if (admins.length > 0) {
-        alert('Login successful!');
+        this.router.navigate(['/admin-dashboard'])
+        // alert('Login successful!');
       } else {
         alert('Invalid credentials');
       }

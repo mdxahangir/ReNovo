@@ -1,0 +1,115 @@
+:root {
+    --primary-color: #FF6A00;
+    --secondary-color: #146EB4;
+    --dark-color: #1E1E1E;
+    --light-color: #F8F9FA;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.sidebar {
+    background-color: white;
+    height: 100vh;
+    position: fixed;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar .nav-link {
+    color: var(--dark-color);
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    background-color: rgba(255, 106, 0, 0.1);
+    color: var(--primary-color);
+}
+
+.sidebar .nav-link i {
+    width: 24px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.top-bar {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat-card .value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-card .label {
+    color: #666;
+    font-size: 14px;
+}
+
+.badge-alibaba {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.table th {
+    font-weight: 600;
+    color: #555;
+}
+
+.btn-alibaba {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.btn-alibaba:hover {
+    background-color: #e05d00;
+    color: white;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--primary-color);
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
