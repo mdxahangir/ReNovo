@@ -16,3 +16,4 @@ export class AppComponent {
   footerMaxHeight !:number;
   title = 'ReNovoCart';
 }
+

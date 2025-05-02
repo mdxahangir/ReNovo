@@ -1,0 +1,59 @@
+body {
+    background-color: #f9f9f9;
+  }
+  
+  .card {
+    background-color: rgb(182, 185, 184);
+    max-width: 600px;
+    margin: auto;
+  }
+
+
+  /* src/app/components/registration/registration.component.css */
+.card {
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-control:focus {
+  border-color: #FF6A00;
+  box-shadow: 0 0 0 0.25rem rgba(255, 106, 0, 0.25);
+}
+
+.btn-warning {
+  background-color: #FF6A00;
+  border-color: #FF6A00;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.btn-warning:hover {
+  background-color: #e05d00;
+  border-color: #e05d00;
+  color: white;
+}
+
+.btn-warning:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+}
+
+.text-warning {
+  color: #FF6A00 !important;
+}
+
+.text-danger {
+  font-size: 0.875em;
+  margin-top: 0.25rem;
+}
+
+.alert {
+  margin-bottom: 1rem;
+}
+
+.spinner-border {
+  vertical-align: middle;
+}
+  

@@ -5,5 +5,14 @@
             "email": "admin",
             "password": "admin123"
         }
-    ]
+    ],
+    
+        "buyers": [
+          
+        ],
+        "users": [
+            
+        ]
+      
+      
 }
