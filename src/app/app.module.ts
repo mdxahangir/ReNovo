@@ -31,7 +31,7 @@ import { RouterModule } from '@angular/router';
     HttpClientModule, 
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    // RouterModule.forRoot(appRoutes)
     
   ],
   providers: [],

@@ -32,8 +32,8 @@ const routes : Routes = [
     //       {path:"checkout", component:CheckoutComponent}
     //     ]
     //   },
-    { path : "signin-signup", component : SigninSignupComponent }
-    
+    { path : "signin-signup", component : SigninSignupComponent },
+    { path: '', redirectTo: '/signin-signup', pathMatch: 'full' }
 ];
 @NgModule({
     imports : [RouterModule.forRoot(routes)],
