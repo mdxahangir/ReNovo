@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule, } from './app-routing-module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'
 
@@ -15,6 +14,14 @@ import { SignupComponent } from './customer/signup/signup.component';
 import { LoginComponent } from './customer/login/login.component';
 import { SupplierDashboardComponent } from './customer/supplier/supplier-dashboard/supplier-dashboard.component';
 import { AddProductComponent } from './customer/supplier/add-product/add-product.component';
+import { RouterModule } from '@angular/router';
+import routes  from './app-routing-module';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { GoOrderComponent } from './product/go-order/go-order.component';
+import { OrderManagementComponent } from './admin/order-management/order-management.component';
+import { ProductsManagementComponent } from './admin/products-management/products-management.component';
+import { ProductListingsComponent } from './customer/supplier/product-listings/product-listings.component';
+import { PaymentTrackingComponent } from './customer/supplier/payment-tracking/payment-tracking.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +34,19 @@ import { AddProductComponent } from './customer/supplier/add-product/add-product
     SignupComponent,
     LoginComponent,
     SupplierDashboardComponent,
-    AddProductComponent
+    AddProductComponent,
+    ProductDetailsComponent,
+    GoOrderComponent,
+    OrderManagementComponent,
+    ProductsManagementComponent,
+    ProductListingsComponent,
+    PaymentTrackingComponent,
   
   ],
   imports: [
     BrowserModule,
     LayoutModule,
-    AppRoutingModule,
+    RouterModule.forRoot(routes),
     HttpClientModule, 
     FormsModule,
     ReactiveFormsModule,

@@ -1,4 +1,4 @@
-<body>
+
     <div class="d-flex">
         <!-- Sidebar -->
         <div class="sidebar w-250 d-flex flex-column">
@@ -8,78 +8,78 @@
             <div class="flex-grow-1 overflow-auto p-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" routerLink="/dashboard">
                             <i class="fas fa-tachometer-alt"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" routerLink="/storefront-management">
                             <i class="fas fa-box-open"></i> Storefront Management
                         </a>
                         <ul class="sub-menu ps-4">
-                            <li><a href="#" class="nav-link">Product Listings</a></li>
-                            <li><a href="#" class="nav-link">Store Customization</a></li>
-                            <li><a href="#" class="nav-link">Inventory Control</a></li>
+                            <li><a routerLink="/product-listings" class="nav-link">Product Listings</a></li>
+                            <li><a routerLink="/store-customization" class="nav-link">Store Customization</a></li>
+                            <li><a routerLink="/inventory-control" class="nav-link">Inventory Control</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" routerLink="/order-management">
                             <i class="fas fa-shopping-cart"></i> Order Management
                         </a>
                         <ul class="sub-menu ps-4">
-                            <li><a href="#" class="nav-link">Order Processing</a></li>
-                            <li><a href="#" class="nav-link">Payment Tracking</a></li>
-                            <li><a href="#" class="nav-link">Shipping Integration</a></li>
+                            <li><a routerLink="/order-processing" class="nav-link">Order Processing</a></li>
+                            <li><a routerLink="/payment-tracking" class="nav-link">Payment Tracking</a></li>
+                            <li><a routerLink="/shipping-integration" class="nav-link">Shipping Integration</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" routerLink="/customer-engagement">
                             <i class="fas fa-users"></i> Customer Engagement
                         </a>
                         <ul class="sub-menu ps-4">
-                            <li><a href="#" class="nav-link">Inquiry Management</a></li>
-                            <li><a href="#" class="nav-link">Messaging System</a></li>
-                            <li><a href="#" class="nav-link">Feedback & Reviews</a></li>
+                            <li><a routerLink="/inquiry-management" class="nav-link">Inquiry Management</a></li>
+                            <li><a routerLink="/messaging-system" class="nav-link">Messaging System</a></li>
+                            <li><a routerLink="/feedback" class="nav-link">Feedback & Reviews</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" routerLink="/analytics">
                             <i class="fas fa-chart-line"></i> Analytics & Insights
                         </a>
                         <ul class="sub-menu ps-4">
-                            <li><a href="#" class="nav-link">Performance Metrics</a></li>
-                            <li><a href="#" class="nav-link">Buyer Behavior</a></li>
-                            <li><a href="#" class="nav-link">Market Trends</a></li>
+                            <li><a routerLink="/performance-petrics" class="nav-link">Performance Metrics</a></li>
+                            <li><a routerLink="/buyer-behavior" class="nav-link">Buyer Behavior</a></li>
+                            <li><a routerLink="/market-trends" class="nav-link">Market Trends</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" routerLink="/marketing">
                             <i class="fas fa-bullhorn"></i> Marketing & Promotion
                         </a>
                         <ul class="sub-menu ps-4">
-                            <li><a href="#" class="nav-link">Advertising Tools</a></li>
-                            <li><a href="#" class="nav-link">Promotional Campaigns</a></li>
-                            <li><a href="#" class="nav-link">SEO Optimization</a></li>
+                            <li><a routerLink="/advertising-tools" class="nav-link">Advertising Tools</a></li>
+                            <li><a routerLink="/promotional-campaigns" class="nav-link">Promotional Campaigns</a></li>
+                            <li><a routerLink="/seo-optimization" class="nav-link">SEO Optimization</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" routerLink="/account">
                             <i class="fas fa-user-cog"></i> Account & Compliance
                         </a>
                         <ul class="sub-menu ps-4">
-                            <li><a href="#" class="nav-link">Profile Settings</a></li>
-                            <li><a href="#" class="nav-link">Verification</a></li>
-                            <li><a href="#" class="nav-link">Compliance Monitoring</a></li>
+                            <li><a routerLink="/profile-settings" class="nav-link">Profile Settings</a></li>
+                            <li><a routerLink="/verification" class="nav-link">Verification</a></li>
+                            <li><a routerLink="/compliance-monitoring" class="nav-link">Compliance Monitoring</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" routerLink="/support-resource">
                             <i class="fas fa-question-circle"></i> Support & Resources
                         </a>
                         <ul class="sub-menu ps-4">
-                            <li><a href="#" class="nav-link">Help Center</a></li>
-                            <li><a href="#" class="nav-link">Seller Training</a></li>
-                            <li><a href="#" class="nav-link">Community Forums</a></li>
+                            <li><a routerLink="/help-center" class="nav-link">Help Center</a></li>
+                            <li><a routerLink="/seller-training" class="nav-link">Seller Training</a></li>
+                            <li><a routerLink="/community-forums" class="nav-link">Community Forums</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -233,9 +233,30 @@
                         </div>
                         <div class="card-body">
                             <div class="d-grid gap-2">
-                                <button class="btn btn-alibaba mb-2">
+                                <!-- <button  class="btn btn-alibaba mb-2">
                                     <i class="fas fa-plus me-2"></i> Add New Product
-                                </button>
+                                </button> -->
+                                <!-- <button class="btn btn-alibaba mb-2" [routerLink]="['supplier-dashboard']">
+                                    <i class="fas fa-plus me-2"></i> Add New Product
+                                  </button> -->
+
+                                  <!-- <button class="btn btn-alibaba mb-2" [routerLink]="['supplier-dashboard']">
+                                    <i class="fas fa-plus me-2"></i> Add New Product
+                                  </button> -->
+
+                                  <!-- <button class="btn btn-alibaba mb-2" [routerLink]="['supplier-dashboard']">
+                                    <i class="fas fa-plus me-2"></i> Add New Product
+                                  </button> -->
+
+                                  <a class="btn btn-alibaba mb-2" routerLink="/add-jahangir">
+                                    <i class="fas fa-plus me-2"></i> Add New Product
+                                  </a>
+
+                                  <!-- <a routerLink="/home" class="btn btn-light btn-sm">
+                                    <i class="fas fa-user-plus me-1"></i>
+                                    <span>Join Free</span>
+                                </a> -->
+                                
                                 <button class="btn btn-outline-primary mb-2">
                                     <i class="fas fa-bullhorn me-2"></i> Create Promotion
                                 </button>
@@ -401,4 +422,3 @@
             </div>
         </div>
     </div>
-</body>

@@ -4,13 +4,15 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UserCrudComponent } from './user-crud/user-crud.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { OrderManagementComponent } from './order-management/order-management.component';
+import { ProductsManagementComponent } from './products-management/products-management.component';
 
 
 
 @NgModule({
   declarations: [  
 
-    UserCrudComponent,
+    UserCrudComponent, OrderManagementComponent, ProductsManagementComponent,
 
   ],
   imports: [CommonModule, FormsModule, HttpClientModule],
