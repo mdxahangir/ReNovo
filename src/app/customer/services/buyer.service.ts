@@ -9,7 +9,7 @@ import { Buyer } from 'src/app/core/Models/admins/byer.model';
   providedIn: 'root'
 })
 export class BuyerService {
-  private apiUrl = 'http://localhost:3000/buyers'; // adjust to match your JSON Server
+  private apiUrl = 'http://localhost:3000/users'; // adjust to match your JSON Server
 
   constructor(private http: HttpClient) {}
 

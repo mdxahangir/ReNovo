@@ -21,76 +21,7 @@
       "phoneArea": "Dhaka",
       "phoneNumber": "01796448784",
       "agreedToTerms": true
-    },
-    {
-      "id": "baca",
-      "country": "BD",
-      "role": "seller",
-      "email": "xyz@gmail.com",
-      "password": "admin123",
-      "companyName": "amar",
-      "firstName": "md",
-      "lastName": "jahangir",
-      "phoneCode": "880",
-      "phoneArea": "Dhaka",
-      "phoneNumber": "01796448784",
-      "agreedToTerms": true
-    },
-    {
-      "id": "4648",
-      "country": "BD",
-      "role": "seller",
-      "email": "xyz@gmail.com",
-      "password": "admin123",
-      "companyName": "amar",
-      "firstName": "md",
-      "lastName": "jahangir",
-      "phoneCode": "880",
-      "phoneArea": "Dhaka",
-      "phoneNumber": "01796448784",
-      "agreedToTerms": true
-    },
-    {
-      "id": "6cdb",
-      "country": "BD",
-      "role": "seller",
-      "email": "xyz@gmail.com",
-      "password": "admin123",
-      "companyName": "amar",
-      "firstName": "md",
-      "lastName": "jahangir",
-      "phoneCode": "880",
-      "phoneArea": "Dhaka",
-      "phoneNumber": "01796448784",
-      "agreedToTerms": true
-    },
-    {
-      "id": "f9c7",
-      "country": "BD",
-      "role": "seller",
-      "email": "xyz@gmail.com",
-      "password": "admin123",
-      "companyName": "amar",
-      "firstName": "md",
-      "lastName": "jahangir",
-      "phoneCode": "880",
-      "phoneArea": "Dhaka",
-      "phoneNumber": "01796448784",
-      "agreedToTerms": true
-    },
-    {
-      "id": "b1bc",
-      "country": "BD",
-      "role": "both",
-      "email": "xyz@gmail.com",
-      "password": "admin123",
-      "companyName": "amar",
-      "firstName": "md",
-      "lastName": "jahangir",
-      "phoneCode": "880",
-      "phoneArea": "Dhaka",
-      "phoneNumber": "01796448784",
-      "agreedToTerms": true
     }
+    
   ]
 }

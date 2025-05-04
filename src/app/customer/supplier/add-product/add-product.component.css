@@ -1,0 +1,15 @@
+
+  .dropzone {
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .dropzone:hover {
+    background-color: #f8f9fa !important;
+  }
+  .remove-spec, .remove-img {
+    transition: all 0.2s;
+  }
+  .remove-spec:hover, .remove-img:hover {
+    transform: scale(1.1);
+  }
+ 

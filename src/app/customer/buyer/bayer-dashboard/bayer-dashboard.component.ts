@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bayer-dashboard.component.css']
 })
 export class BayerDashboardComponent implements OnInit {
-  ngOnInit(): void {
+logout() {
+throw new Error('Method not implemented.');
+}
+  currentUser: any;
+
+  constructor() {}
+
+  ngOnInit() {
+   
   }
 
   
-
 }

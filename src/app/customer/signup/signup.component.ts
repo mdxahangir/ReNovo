@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/Models/user.model';
-import { CustomerService } from 'src/app/customer/sevices/customer.service';
+import { CustomerService } from 'src/app/customer/services/customer.service';
 
 @Component({
-  selector: 'app-signin-signup',
-  templateUrl: './signin-signup.component.html',
-  styleUrls: ['./signin-signup.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
 
 
-export class SigninSignupComponent {
+export class SignupComponent {
   customerForm!: FormGroup;
   submitted = false;//
   errorMessage = '';//
