@@ -20,6 +20,9 @@ import { SellerPaymentComponent } from './customer/supplier/seller-payment/selle
 import { CartComponent } from './customer/cart/cart.component';
 import { DeliverToComponent } from './customer/deliver-to/deliver-to.component';
 import { OrderProtectionComponent } from './customer/order-protection/order-protection.component';
+import { GoldSuppliersComponent } from './customer/gold-suppliers/gold-suppliers.component';
+import { TradeAssuranceComponent } from './customer/trade-assurance/trade-assurance.component';
+import { TradeShowsComponent } from './customer/trade-shows/trade-shows.component';
 
 const routes : Routes = [
 
@@ -55,8 +58,10 @@ const routes : Routes = [
     { path : 'seller-payment', component : SellerPaymentComponent},
     { path : 'cart', component : CartComponent},
     { path : "deliver-to", component : DeliverToComponent},
-    { path : "order-protection", component : OrderProtectionComponent }
-    
+    { path : "order-protection", component : OrderProtectionComponent },
+    { path : "gold-supplier", component : GoldSuppliersComponent},
+    { path : "trade-assurance", component : TradeAssuranceComponent},
+    { path : "trade-shows", component : TradeShowsComponent}
 
 
 

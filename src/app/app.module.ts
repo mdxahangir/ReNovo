@@ -32,6 +32,9 @@ import { AnalyticsManagementComponent } from './admin/analytics-management/analy
 import { FinancialsManagementComponent } from './admin/financials-management/financials-management.component';
 import { SettingsManagementComponent } from './admin/settings-management/settings-management.component';
 import { DeliverToComponent } from './customer/deliver-to/deliver-to.component';
+import { GoldSuppliersComponent } from './customer/gold-suppliers/gold-suppliers.component';
+import { TradeAssuranceComponent } from './customer/trade-assurance/trade-assurance.component';
+import { TradeShowsComponent } from './customer/trade-shows/trade-shows.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +70,9 @@ import { DeliverToComponent } from './customer/deliver-to/deliver-to.component';
     SellerPaymentComponent,
     CartComponent,
     DeliverToComponent,
+    GoldSuppliersComponent,
+    TradeAssuranceComponent,
+    TradeShowsComponent,
     
   
   ],
