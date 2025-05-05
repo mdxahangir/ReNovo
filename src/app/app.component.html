@@ -44,9 +44,9 @@
                     <div class="d-flex flex-column flex-lg-row align-items-center ms-lg-auto">
                         <!-- Shipping -->
                         <div class="me-lg-3 mb-2 mb-lg-0">
-                            <a href="#" class="text-white text-decoration-none">
+                            <a routerLink="deliver-to" class="text-white text-decoration-none">
                                 <i class="fas fa-truck me-1"></i>
-                                <span class="d-none d-lg-inline">Shipping</span>
+                                <span class="d-none d-lg-inline">Shipping To</span>
                             </a>
                         </div>
                         
@@ -86,7 +86,7 @@
                             </div>
                             
                             <div class="position-relative me-3">
-                                <a href="#" class="text-white">
+                                <a routerLink="cart" class="text-white">
                                     <i class="fas fa-shopping-cart fa-lg"></i>
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
                                 </a>
@@ -124,7 +124,7 @@
                 <button class="btn btn-danger dropdown-toggle" type="button" id="categoriesDropdown" data-bs-toggle="dropdown">
                     <i class="fas fa-bars me-2"></i> Categories
                 </button>
-                <div class="dropdown-menu mega-menu p-4 w-100">
+                <div class="dropdown-menu mega-menu p-4 w-200">
                     <div class="row">
                         <div class="col-md-3">
                             <h6 class="fw-bold text-primary">Consumer Electronics</h6>
@@ -169,6 +169,38 @@
                     </div>
                 </div>
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+          
+            <script>
+                // Simple JavaScript to enhance the dropdown
+                document.addEventListener('DOMContentLoaded', function() {
+                    const dropdown = document.querySelector('.dropdown');
+                    const dropdownMenu = document.querySelector('.dropdown-menu');
+                    
+                    // Show dropdown on hover (for desktop)
+                    dropdown.addEventListener('mouseenter', function() {
+                        const bsDropdown = new bootstrap.Dropdown(dropdown.querySelector('[data-bs-toggle="dropdown"]'));
+                        bsDropdown.show();
+                    });
+                    
+                    // Keep dropdown open when hovering over menu
+                    dropdownMenu.addEventListener('mouseleave', function() {
+                        const bsDropdown = bootstrap.Dropdown.getInstance(dropdown.querySelector('[data-bs-toggle="dropdown"]'));
+                        bsDropdown.hide();
+                    });
+                    
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', function(event) {
+                        if (!dropdown.contains(event.target)) {
+                            const bsDropdown = bootstrap.Dropdown.getInstance(dropdown.querySelector('[data-bs-toggle="dropdown"]'));
+                            if (bsDropdown) {
+                                bsDropdown.hide();
+                            }
+                        }
+                    });
+                });
+            </script>
+              
             
             <!-- Main Navigation Links -->
             <ul class="navbar-nav me-auto">
@@ -187,10 +219,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-industry text-warning me-1"></i> Services</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/order-protection"><i class="fas fa-industry text-warning me-1"></i> Protection</a>
+              </li>
             </ul>
 
             <!-- Help Center -->
             <div class="d-flex align-items-center">
+             
                 <div class="dropdown me-3">
                     <a class="nav-link dropdown-toggle" href="#" id="helpDropdown" data-bs-toggle="dropdown">
                         <i class="fas fa-question-circle me-1"></i> Help Center
@@ -1333,7 +1369,7 @@
       <div class="row">
         
         <div class="col-md-6">
-          <div class="banner-ad bg-danger mb-3" style="background: url('images/ad-image-3.png');background-repeat: no-repeat;background-position: right bottom;">
+          <div class="banner-ad bg-danger mb-3" style="background: url('assets/images/ad-image-3.png');background-repeat: no-repeat;background-position: right bottom;">
             <div class="banner-content p-5">
 
               <div class="categories text-primary fs-3 fw-bold">Upto 25% Off</div>

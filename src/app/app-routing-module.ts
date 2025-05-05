@@ -15,6 +15,11 @@ import { OrderManagementComponent } from './admin/order-management/order-managem
 import { ProductsManagementComponent } from './admin/products-management/products-management.component';
 import { ProductListingsComponent } from './customer/supplier/product-listings/product-listings.component';
 import { PaymentTrackingComponent } from './customer/supplier/payment-tracking/payment-tracking.component';
+import { OrderProcessingComponent } from './customer/supplier/order-processing/order-processing.component';
+import { SellerPaymentComponent } from './customer/supplier/seller-payment/seller-payment.component';
+import { CartComponent } from './customer/cart/cart.component';
+import { DeliverToComponent } from './customer/deliver-to/deliver-to.component';
+import { OrderProtectionComponent } from './customer/order-protection/order-protection.component';
 
 const routes : Routes = [
 
@@ -46,8 +51,11 @@ const routes : Routes = [
     { path : 'product-management', component : ProductsManagementComponent},
     { path : 'product-listings', component : ProductListingsComponent},
     { path : 'payment-tracking', component : PaymentTrackingComponent},
-
-  
+    { path : 'order-processing',component : OrderProcessingComponent},
+    { path : 'seller-payment', component : SellerPaymentComponent},
+    { path : 'cart', component : CartComponent},
+    { path : "deliver-to", component : DeliverToComponent},
+    { path : "order-protection", component : OrderProtectionComponent }
     
 
 

@@ -13,8 +13,7 @@ import { SellerPaymentComponent } from './seller-payment/seller-payment.componen
   declarations: [
 
   
-    OrderProcessingComponent,
-        SellerPaymentComponent
+ 
   ],
   imports: [
     CommonModule

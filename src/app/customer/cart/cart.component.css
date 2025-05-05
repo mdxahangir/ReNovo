@@ -1,0 +1,31 @@
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+.product-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+.quantity-input {
+    width: 60px;
+    text-align: center;
+}
+.summary-card {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+.btn-orange {
+    background-color: #f85606;
+    color: white;
+}
+.btn-orange:hover {
+    background-color: #e04d05;
+    color: white;
+}
+.text-orange {
+    color: #f85606;
+}
+.navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}

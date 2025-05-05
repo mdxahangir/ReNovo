@@ -1,0 +1,17 @@
+ /* Custom styles for the mega menu */
+ .mega-menu {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+@media (min-width: 768px) {
+    .mega-menu {
+        width: 800px;
+        left: auto;
+    }
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
