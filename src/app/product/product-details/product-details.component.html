@@ -1,25 +1,25 @@
+<!-- product-detail.component.html -->
 <div class="container">
     <div class="product-container">
         <div class="product-gallery">
-            <img src="https://via.placeholder.com/600x400?text=Premium+Widget" alt="Premium Widget" class="main-image" id="mainImage">
+            <img [src]="mainImage" [alt]="product.title" class="main-image">
             <div class="thumbnail-container">
-                <img src="assets/images/icon-vegetables-broccoli.png" alt="Thumbnail 1" class="thumbnail" onclick="changeImage(this)">
-                <img src="assets/images/icon-vegetables-broccoli.png" alt="Thumbnail 1" class="thumbnail" onclick="changeImage(this)">
-                <img src="assets/images/icon-vegetables-broccoli.png" alt="Thumbnail 1" class="thumbnail" onclick="changeImage(this)">
-                <img src="assets/images/icon-vegetables-broccoli.png" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(this)">
-                <img src="assets/images/icon-vegetables-broccoli.png" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(this)">
-                <img src="assets/images/icon-vegetables-broccoli.png" alt="Thumbnail 4" class="thumbnail" onclick="changeImage(this)">
+                <img *ngFor="let thumb of thumbnails" 
+                     [src]="thumb.src" 
+                     [alt]="thumb.alt" 
+                     class="thumbnail" 
+                     (click)="changeImage(thumb.src)">
             </div>
         </div>
         
         <div class="product-info">
-            <h1 class="product-title">Premium Industrial Widget (2023 Model)</h1>
+            <h1 class="product-title">{{product.title}}</h1>
             
             <div class="supplier-info">
-                <img src="https://src/assets/images/bg-leaves-pattern.png" alt="Global Parts Co." class="supplier-logo">
+                <img [src]="product.supplier.logo" [alt]="product.supplier.name" class="supplier-logo">
                 <div>
-                    <div class="supplier-name">Global Parts Co.</div>
-                    <div class="supplier-verification">
+                    <div class="supplier-name">{{product.supplier.name}}</div>
+                    <div class="supplier-verification" *ngIf="product.supplier.verified">
                         <i class="fas fa-check-circle"></i> Verified Supplier
                     </div>
                 </div>
@@ -35,22 +35,22 @@
             <div class="price-section">
                 <div class="price-row">
                     <span class="price-label">Price:</span>
-                    <span class="price-value main-price">$12.50 - $15.80</span>
+                    <span class="price-value main-price">{{product.price}}</span>
                 </div>
                 <div class="price-row">
                     <span class="price-label">Price Range:</span>
-                    <span class="price-value">Varies by order quantity</span>
+                    <span class="price-value">{{product.priceRange}}</span>
                 </div>
                 <div class="price-row">
                     <span class="price-label">Payment Terms:</span>
-                    <span class="price-value">T/T, L/C, Western Union</span>
+                    <span class="price-value">{{product.paymentTerms}}</span>
                 </div>
                 <div class="price-row">
                     <span class="price-label">Delivery Time:</span>
-                    <span class="price-value">7-15 days after payment</span>
+                    <span class="price-value">{{product.deliveryTime}}</span>
                 </div>
                 <div class="moq">
-                    <strong>Minimum Order Quantity:</strong> 100 pieces
+                    <strong>Minimum Order Quantity:</strong> {{product.moq}}
                 </div>
             </div>
             
@@ -70,117 +70,69 @@
     
     <div class="product-tabs">
         <div class="tab-header">
-            <div class="tab-btn active" onclick="changeTab(0)">Product Details</div>
-            <div class="tab-btn" onclick="changeTab(1)">Specifications</div>
-            <div class="tab-btn" onclick="changeTab(2)">Company Profile</div>
-            <div class="tab-btn" onclick="changeTab(3)">Reviews (24)</div>
+            <div *ngFor="let tab of tabs; let i = index" 
+                 class="tab-btn" 
+                 [class.active]="activeTab === i"
+                 (click)="setActiveTab(i)">
+                {{tab}}
+            </div>
         </div>
         
         <div class="tab-content">
-            <div id="tab0" class="tab-pane active">
+            <!-- Product Details Tab -->
+            <div id="tab0" class="tab-pane" [class.active]="activeTab === 0">
                 <h3>Product Description</h3>
-                <p>The Premium Industrial Widget is designed for high-performance applications in manufacturing environments. With its durable construction and precision engineering, this widget offers superior reliability and longevity compared to standard models.</p>
+                <p>{{details.description}}</p>
                 
                 <h4>Key Features:</h4>
-                <ul style="margin-left: 20px; margin-top: 10px; margin-bottom: 20px;">
-                    <li>High-grade stainless steel construction</li>
-                    <li>Precision-machined components (±0.01mm tolerance)</li>
-                    <li>Corrosion-resistant coating</li>
-                    <li>Compatible with industry standard Widget Systems 2.0+</li>
-                    <li>Maintenance-free operation for up to 10,000 hours</li>
+                <ul>
+                    <li *ngFor="let feature of details.features">{{feature}}</li>
                 </ul>
                 
                 <h4>Packaging & Shipping</h4>
-                <p>Each widget is individually packaged in protective foam and shipped in durable cardboard boxes. Standard pallet shipping available for bulk orders.</p>
+                <p>{{details.packaging}}</p>
             </div>
             
-            <div id="tab1" class="tab-pane" style="display:none;">
+            <!-- Specifications Tab -->
+            <div id="tab1" class="tab-pane" [class.active]="activeTab === 1">
                 <table class="specs-table">
-                    <tr>
-                        <td class="spec-name">Material</td>
-                        <td>Grade 304 Stainless Steel</td>
-                    </tr>
-                    <tr>
-                        <td class="spec-name">Dimensions</td>
-                        <td>50mm × 30mm × 20mm</td>
-                    </tr>
-                    <tr>
-                        <td class="spec-name">Weight</td>
-                        <td>85g per unit</td>
-                    </tr>
-                    <tr>
-                        <td class="spec-name">Operating Temperature</td>
-                        <td>-20°C to 150°C</td>
-                    </tr>
-                    <tr>
-                        <td class="spec-name">Load Capacity</td>
-                        <td>Up to 500kg</td>
-                    </tr>
-                    <tr>
-                        <td class="spec-name">Certifications</td>
-                        <td>ISO 9001, CE, RoHS</td>
-                    </tr>
-                    <tr>
-                        <td class="spec-name">Warranty</td>
-                        <td>2 years limited warranty</td>
+                    <tr *ngFor="let spec of specs">
+                        <td class="spec-name">{{spec.name}}</td>
+                        <td>{{spec.value}}</td>
                     </tr>
                 </table>
             </div>
             
-            <div id="tab2" class="tab-pane" style="display:none;">
-                <h3>About Global Parts Co.</h3>
-                <p>Founded in 2005, Global Parts Co. is a leading manufacturer of industrial components with factories in China and distribution centers worldwide. We specialize in precision-engineered parts for the automotive, aerospace, and manufacturing industries.</p>
+            <!-- Company Profile Tab -->
+            <div id="tab2" class="tab-pane" [class.active]="activeTab === 2">
+                <h3>About {{product.supplier.name}}</h3>
+                <p>{{companyProfile.about}}</p>
                 
                 <h4>Business Information</h4>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li><strong>Year Established:</strong> 2005</li>
-                    <li><strong>Annual Revenue:</strong> $50 Million</li>
-                    <li><strong>Employees:</strong> 250+</li>
-                    <li><strong>Quality Certifications:</strong> ISO 9001:2015, IATF 16949</li>
-                    <li><strong>Export Markets:</strong> North America, Europe, Asia</li>
+                <ul>
+                    <li *ngFor="let info of companyProfile.businessInfo">
+                        <strong>{{info.label}}:</strong> {{info.value}}
+                    </li>
                 </ul>
             </div>
             
-            <div id="tab3" class="tab-pane" style="display:none;">
+            <!-- Reviews Tab -->
+            <div id="tab3" class="tab-pane" [class.active]="activeTab === 3">
                 <h3>Customer Reviews</h3>
-                <p>Average Rating: 4.7/5 (24 reviews)</p>
+                <p>Average Rating: {{reviews.averageRating}} ({{reviews.totalReviews}} reviews)</p>
                 
-                <div style="margin-top: 20px; padding: 15px; background: #f9f9f9; border-radius: 8px;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                        <strong>John D.</strong>
-                        <div style="color: #FF6A00;">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                <div class="review-card">
+                    <div class="review-header">
+                        <strong>{{reviews.sampleReview.author}}</strong>
+                        <div class="rating-stars">
+                            <i *ngFor="let star of [].constructor(reviews.sampleReview.rating)" 
+                               class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p>"Excellent product quality and the supplier was very responsive. Transaction was smooth with no hidden fees as promised."</p>
-                    <div style="font-size: 12px; color: #666; margin-top: 5px;">Posted on March 15, 2023</div>
+                    <p>{{reviews.sampleReview.comment}}</p>
+                    <div class="review-date">{{reviews.sampleReview.date}}</div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    function changeImage(element) {
-        const mainImage = document.getElementById('mainImage');
-        mainImage.src = element.src.replace('150', '600x400');
-    }
-    
-    function changeTab(index) {
-        // Hide all tab panes
-        const panes = document.querySelectorAll('.tab-pane');
-        panes.forEach(pane => pane.style.display = 'none');
-        
-        // Show selected pane
-        panes[index].style.display = 'block';
-        
-        // Update active tab button
-        const tabs = document.querySelectorAll('.tab-btn');
-        tabs.forEach(tab => tab.classList.remove('active'));
-        tabs[index].classList.add('active');
-    }
-</script>

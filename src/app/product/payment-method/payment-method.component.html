@@ -1,0 +1,89 @@
+<!-- payment.component.html -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-header bg-white">
+                    <h4 class="mb-0">Select Payment Method</h4>
+                </div>
+                <div class="card-body">
+                    <!-- Payment Methods -->
+                    <div *ngFor="let method of paymentMethods" 
+                         class="payment-card" 
+                         [class.active]="method.active"
+                         (click)="selectPayment(method.id)">
+                        <div class="d-flex align-items-center">
+                            <i [class]="method.icon" 
+                               class="payment-icon" 
+                               [style.color]="method.iconColor"></i>
+                            <div>
+                                <div class="payment-title">{{method.title}}</div>
+                                <div class="payment-desc">{{method.description}}</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Credit Card Details -->
+                        <div class="mt-3" *ngIf="method.showDetails && method.id === 'credit-card'">
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <label class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Expiry Date</label>
+                                    <input type="text" class="form-control" placeholder="MM/YY">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">CVV</label>
+                                    <input type="text" class="form-control" placeholder="123">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label class="form-label">Cardholder Name</label>
+                                    <input type="text" class="form-control" placeholder="Name on card">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="order-summary">
+                <div class="summary-title">Order Summary</div>
+                
+                <div class="summary-item">
+                    <span>Subtotal (3 items)</span>
+                    <span>{{orderSummary.subtotal | currency}}</span>
+                </div>
+                <div class="summary-item">
+                    <span>Shipping</span>
+                    <span>{{orderSummary.shipping | currency}}</span>
+                </div>
+                <div class="summary-item">
+                    <span>Tax</span>
+                    <span>{{orderSummary.tax | currency}}</span>
+                </div>
+                <div class="summary-item">
+                    <span>Discount</span>
+                    <span class="text-danger">{{orderSummary.discount | currency}}</span>
+                </div>
+                
+                <div class="summary-item summary-total">
+                    <span>Total</span>
+                    <span>{{calculateTotal() | currency}}</span>
+                </div>
+
+                <button class="btn btn-pay btn-block w-100 mt-3">
+                    <i class="fas fa-lock me-2"></i> Pay Now
+                </button>
+
+                <div class="text-center mt-3">
+                    <img src="https://via.placeholder.com/250x50?text=Secure+Payment" 
+                         alt="Secure Payment" 
+                         class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

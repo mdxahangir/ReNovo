@@ -33,8 +33,13 @@ import { FinancialsManagementComponent } from './admin/financials-management/fin
 import { SettingsManagementComponent } from './admin/settings-management/settings-management.component';
 import { DeliverToComponent } from './customer/deliver-to/deliver-to.component';
 import { GoldSuppliersComponent } from './customer/gold-suppliers/gold-suppliers.component';
-import { TradeAssuranceComponent } from './customer/trade-assurance/trade-assurance.component';
-import { TradeShowsComponent } from './customer/trade-shows/trade-shows.component';
+import { TradeAssuranceComponent } from './customer/trade/trade-assurance/trade-assurance.component';
+import { TradeShowsComponent } from './customer/trade/trade-shows/trade-shows.component';
+import { MessageContainerComponent } from './customer/messages/message-container/message-container.component';
+import { AssurenceFormComponent } from './customer/trade/assurence-form/assurence-form.component';
+import { ExhibitionRegistrationComponent } from './customer/trade/exhibition-registration/exhibition-registration.component';
+import { ShippingRadyComponent } from './customer/shipping/shipping-rady/shipping-rady.component';
+import { PaymentMethodComponent } from './product/payment-method/payment-method.component';
 
 @NgModule({
   declarations: [
@@ -64,15 +69,25 @@ import { TradeShowsComponent } from './customer/trade-shows/trade-shows.componen
     PaymentTrackingComponent,
     ProductListingsComponent,
     SellerPaymentComponent,
-    // Home
+    // Home products
     ProductDetailsComponent,
     GoOrderComponent,
-    SellerPaymentComponent,
+    PaymentMethodComponent,
+    
+    //navber components
     CartComponent,
     DeliverToComponent,
     GoldSuppliersComponent,
     TradeAssuranceComponent,
     TradeShowsComponent,
+    ExhibitionRegistrationComponent,
+    AssurenceFormComponent,
+    //messages
+    MessageContainerComponent,
+    //shipping
+    ShippingRadyComponent
+
+   
     
   
   ],

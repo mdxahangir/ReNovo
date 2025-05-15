@@ -1,170 +1,158 @@
-<div class="container">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between h-100">
+                <!-- Logo and Toggle -->
+                <div class="d-flex align-items-center">
+                    <button class="btn d-lg-none me-2" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand fw-bold text-primary" href="#">
+                        <span style="color: var(--primary-color)">B2B</span> Marketplace
+                    </a>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="search-bar position-relative mx-3 d-none d-lg-block">
+                    <input type="text" class="form-control ps-3 pe-5 py-2" placeholder="Search products, suppliers...">
+                    <button class="btn btn-sm">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <!-- User Navigation -->
+                <ul class="nav user-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="far fa-envelope"></i>
+                            <span class="d-none d-lg-inline">Messages</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="far fa-bell"></i>
+                            <span class="d-none d-lg-inline">Notifications</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="far fa-user-circle"></i>
+                            <span class="d-none d-lg-inline">Admin</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
     
     <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="logo">Admin<span>Panel</span></div>
-        <ul class="menu">
-            <li routerLink="/admin-dashboard"  class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</li>
-            <li routerLink="/order-management"><i class="fas fa-shopping-cart"></i> Orders</li>
-            <li routerLink="/products-management"><i class="fas fa-box-open"></i> Products</li>
-            <li routerLink="/suppliers-management"><i class="fas fa-industry"></i> Suppliers</li>
-            <li routerLink="/buyers-management"><i class="fas fa-users"></i> Buyers</li>
-            <li routerLink="/marketing-management"><i class="fas fa-bullhorn"></i> Marketing</li>
-            <li routerLink="/analytics-management"><i class="fas fa-chart-line"></i> Analytics</li>
-            <li routerLink="/financials-management"><i class="fas fa-wallet"></i> Financials</li>
-            <li routerLink="/settings-management"><i class="fas fa-cog"></i> Settings</li>
-        </ul>
-    </div>
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- Header -->
-        <div class="header">
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search orders, products, suppliers...">
-            </div>
-            <div class="user-actions">
-                <div class="notification">
-                    <i class="fas fa-bell"></i>
-                    <span class="notification-badge">5</span>
-                </div>
-                <div class="language-selector">
-                    <i class="fas fa-globe"></i>
-                    EN
-                </div>
-                <div class="user-profile">
-                    <div class="user-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <span>Admin User</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
+    <aside class="main-sidebar">
+        <div class="sidebar-inner">
+            <!-- Main Menu -->
+            <ul class="sidebar-menu">
+                <li class="menu-title">Main</li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link active">
+                        <span class="menu-icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                
+                <li class="menu-title">Products</li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-box-open"></i></span>
+                        <span>All Products</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-plus-circle"></i></span>
+                        <span>Add Product</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-tags"></i></span>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                
+                <li class="menu-title">Orders</li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-shopping-cart"></i></span>
+                        <span>All Orders</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-exchange-alt"></i></span>
+                        <span>Returns</span>
+                    </a>
+                </li>
+                
+                <li class="menu-title">Customers</li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-users"></i></span>
+                        <span>Buyers</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-warehouse"></i></span>
+                        <span>Suppliers</span>
+                    </a>
+                </li>
+                
+                <li class="menu-title">Marketing</li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-bullhorn"></i></span>
+                        <span>Promotions</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-envelope"></i></span>
+                        <span>Email Campaigns</span>
+                    </a>
+                </li>
+                
+                <li class="menu-title">Reports</li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-chart-line"></i></span>
+                        <span>Sales</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-chart-bar"></i></span>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                
+                <li class="menu-title">Settings</li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-cog"></i></span>
+                        <span>General</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-credit-card"></i></span>
+                        <span>Payments</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-
-        <!-- Dashboard Content -->
-        <div class="dashboard-content">
-            <!-- Summary Cards -->
-            <div class="card">
-                <div class="card-title">Total Orders</div>
-                <div class="card-value">1,248</div>
-                <div class="card-change">+12.5% from last week</div>
-            </div>
-            <div class="card">
-                <div class="card-title">Revenue</div>
-                <div class="card-value">$84,760</div>
-                <div class="card-change">+8.3% from last week</div>
-            </div>
-            <div class="card">
-                <div class="card-title">Active Buyers</div>
-                <div class="card-value">3,429</div>
-                <div class="card-change">+5.2% from last week</div>
-            </div>
-            <div class="card">
-                <div class="card-title">New Products</div>
-                <div class="card-value">187</div>
-                <div class="card-change negative">-2.1% from last week</div>
-            </div>
-
-            <!-- Main Chart -->
-            <div class="chart-container">
-                <div class="chart-header">
-                    <div class="chart-title">Sales Performance</div>
-                    <div class="chart-actions">
-                        <button>Daily</button>
-                        <button>Weekly</button>
-                        <button>Monthly</button>
-                        <button>Yearly</button>
-                    </div>
-                </div>
-                <div class="chart-placeholder">
-                    [Sales Performance Chart Would Appear Here]
-                </div>
-            </div>
-
-            <!-- Recent Activity -->
-            <div class="recent-activity">
-                <div class="activity-title">Recent Activity</div>
-                <div class="activity-item">
-                    <div class="activity-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="activity-details">
-                        <div class="activity-message">New order #ORD-2023-4567 placed</div>
-                        <div class="activity-time">10 minutes ago</div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-icon">
-                        <i class="fas fa-user-plus"></i>
-                    </div>
-                    <div class="activity-details">
-                        <div class="activity-message">New buyer registered: Global Trading Co.</div>
-                        <div class="activity-time">45 minutes ago</div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-icon">
-                        <i class="fas fa-box-open"></i>
-                    </div>
-                    <div class="activity-details">
-                        <div class="activity-message">Product "Industrial Machine Parts" updated</div>
-                        <div class="activity-time">2 hours ago</div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-icon">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </div>
-                    <div class="activity-details">
-                        <div class="activity-message">System alert: High traffic detected</div>
-                        <div class="activity-time">4 hours ago</div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <div class="activity-details">
-                        <div class="activity-message">Order #ORD-2023-4566 shipped</div>
-                        <div class="activity-time">6 hours ago</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Second Row -->
-        <div class="dashboard-content">
-            <div class="chart-container">
-                <div class="chart-header">
-                    <div class="chart-title">Order Fulfillment Status</div>
-                    <div class="chart-actions">
-                        <button>This Week</button>
-                        <button>This Month</button>
-                        <button>Export</button>
-                    </div>
-                </div>
-                <div class="chart-placeholder">
-                    [Order Fulfillment Chart Would Appear Here]
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-title">Quick Actions</div>
-                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-                    <button style="padding: 10px; background-color: var(--primary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">
-                        <i class="fas fa-plus"></i> Add New Product
-                    </button>
-                    <button style="padding: 10px; background-color: #2196F3; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                        <i class="fas fa-tag"></i> Create Promotion
-                    </button>
-                    <button style="padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                        <i class="fas fa-file-export"></i> Generate Report
-                    </button>
-                    <button style="padding: 10px; background-color: #9C27B0; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                        <i class="fas fa-headset"></i> Contact Support
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    </aside>

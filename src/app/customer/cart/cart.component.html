@@ -1,160 +1,79 @@
+
+<!-- app.component.html -->
 <div class="container mb-5">
     <div class="row">
         <div class="col-lg-8">
             <!-- Cart Header -->
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h4 class="fw-bold mb-0">Shopping Cart (3 Items)</h4>
-                <a href="#" class="text-decoration-none text-primary">Continue Shopping</a>
+                <h4 class="fw-bold mb-0">Shopping Cart ({{cartItems.length}} Items)</h4>
+                <a routerLink="/products" class="text-decoration-none text-primary">Continue Shopping</a>
             </div>
             
             <!-- Cart Items -->
             <div class="card mb-3">
                 <div class="card-header bg-light">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="selectAll" checked>
+                        <input class="form-check-input" type="checkbox" id="selectAll" 
+                               [checked]="allItemsSelected()" (change)="toggleSelectAll($event)">
                         <label class="form-check-label fw-bold" for="selectAll">
                             Select All Items
                         </label>
                     </div>
                 </div>
                 <div class="card-body">
-                    <!-- Supplier 1 -->
-                    <div class="mb-4">
+                    <!-- Group items by supplier -->
+                    <div *ngFor="let supplier of getSuppliers()" class="mb-4">
                         <div class="d-flex align-items-center mb-3">
                             <div class="form-check me-3">
-                                <input class="form-check-input" type="checkbox" checked>
+                                <input class="form-check-input" type="checkbox" 
+                                       [checked]="allSupplierItemsSelected(supplier)"
+                                       (change)="toggleSupplierSelection(supplier, $event)">
                             </div>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-store me-2 text-orange"></i>
-                                <span class="fw-bold">Tech Gadgets Supplier</span>
-                                <span class="badge bg-success ms-2">
+                                <span class="fw-bold">{{supplier}}</span>
+                                <span *ngIf="isVerifiedSupplier(supplier)" class="badge bg-success ms-2">
                                     <i class="fas fa-check-circle me-1"></i> Verified
                                 </span>
                             </div>
                         </div>
                         
-                        <!-- Item 1 -->
-                        <div class="cart-item">
+                        <!-- Items for this supplier -->
+                        <div *ngFor="let item of getItemsBySupplier(supplier)" class="cart-item mb-3">
                             <div class="row">
                                 <div class="col-1">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" checked>
+                                        <input class="form-check-input" type="checkbox" 
+                                               [checked]="item.selected" (change)="toggleItemSelection(item)">
                                     </div>
                                 </div>
                                 <div class="col-3">
-                                    <img src="https://via.placeholder.com/200x200?text=Product+1" class="product-img" alt="Product">
+                                    <img [src]="item.image" class="product-img" alt="Product">
                                 </div>
                                 <div class="col-5">
-                                    <h6 class="mb-1">Wireless Bluetooth Headphones</h6>
-                                    <div class="text-muted small">Model: WH-2023</div>
-                                    <div class="text-muted small">MOQ: 10 pieces</div>
+                                    <h6 class="mb-1">{{item.name}}</h6>
+                                    <div class="text-muted small">Model: {{item.model}}</div>
+                                    <div class="text-muted small">MOQ: {{item.moq}} pieces</div>
                                     <div class="rating small">
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star-half-alt text-warning"></i>
-                                        <span class="ms-1">(128)</span>
+                                        <i *ngFor="let star of getStars(item.rating)" 
+                                           class="fas fa-star" 
+                                           [class.text-warning]="star.filled" 
+                                           [class.far]="!star.filled"></i>
+                                        <span class="ms-1">({{item.reviews}})</span>
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="d-flex flex-column align-items-end">
-                                        <div class="fw-bold text-orange mb-2">$29.99</div>
+                                        <div class="fw-bold text-orange mb-2">${{item.price.toFixed(2)}}</div>
                                         <div class="d-flex align-items-center mb-2">
-                                            <button class="btn btn-sm btn-outline-secondary px-2 py-0">-</button>
-                                            <input type="number" class="form-control form-control-sm quantity-input mx-1" value="10">
-                                            <button class="btn btn-sm btn-outline-secondary px-2 py-0">+</button>
+                                            <button class="btn btn-sm btn-outline-secondary px-2 py-0" 
+                                                    (click)="decreaseQuantity(item)">-</button>
+                                            <input type="number" class="form-control form-control-sm quantity-input mx-1" 
+                                                   [(ngModel)]="item.quantity" min="1">
+                                            <button class="btn btn-sm btn-outline-secondary px-2 py-0" 
+                                                    (click)="increaseQuantity(item)">+</button>
                                         </div>
-                                        <button class="btn btn-sm btn-outline-danger">Remove</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Item 2 -->
-                        <div class="cart-item">
-                            <div class="row">
-                                <div class="col-1">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" checked>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <img src="https://via.placeholder.com/200x200?text=Product+2" class="product-img" alt="Product">
-                                </div>
-                                <div class="col-5">
-                                    <h6 class="mb-1">Smart Watch Fitness Tracker</h6>
-                                    <div class="text-muted small">Model: SW-2023</div>
-                                    <div class="text-muted small">MOQ: 5 pieces</div>
-                                    <div class="rating small">
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="far fa-star text-warning"></i>
-                                        <span class="ms-1">(89)</span>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="d-flex flex-column align-items-end">
-                                        <div class="fw-bold text-orange mb-2">$49.99</div>
-                                        <div class="d-flex align-items-center mb-2">
-                                            <button class="btn btn-sm btn-outline-secondary px-2 py-0">-</button>
-                                            <input type="number" class="form-control form-control-sm quantity-input mx-1" value="5">
-                                            <button class="btn btn-sm btn-outline-secondary px-2 py-0">+</button>
-                                        </div>
-                                        <button class="btn btn-sm btn-outline-danger">Remove</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Supplier 2 -->
-                    <div class="mb-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="form-check me-3">
-                                <input class="form-check-input" type="checkbox" checked>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-store me-2 text-orange"></i>
-                                <span class="fw-bold">Home Essentials Co.</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Item 3 -->
-                        <div class="cart-item">
-                            <div class="row">
-                                <div class="col-1">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" checked>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <img src="https://via.placeholder.com/200x200?text=Product+3" class="product-img" alt="Product">
-                                </div>
-                                <div class="col-5">
-                                    <h6 class="mb-1">Stainless Steel Water Bottle</h6>
-                                    <div class="text-muted small">Model: SSB-2023</div>
-                                    <div class="text-muted small">MOQ: 20 pieces</div>
-                                    <div class="rating small">
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <span class="ms-1">(215)</span>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="d-flex flex-column align-items-end">
-                                        <div class="fw-bold text-orange mb-2">$12.99</div>
-                                        <div class="d-flex align-items-center mb-2">
-                                            <button class="btn btn-sm btn-outline-secondary px-2 py-0">-</button>
-                                            <input type="number" class="form-control form-control-sm quantity-input mx-1" value="20">
-                                            <button class="btn btn-sm btn-outline-secondary px-2 py-0">+</button>
-                                        </div>
-                                        <button class="btn btn-sm btn-outline-danger">Remove</button>
+                                        <button class="btn btn-sm btn-outline-danger" (click)="removeItem(item)">Remove</button>
                                     </div>
                                 </div>
                             </div>
@@ -166,14 +85,15 @@
             <!-- Selected Actions -->
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="selectAllBottom" checked>
+                    <input class="form-check-input" type="checkbox" id="selectAllBottom" 
+                           [checked]="allItemsSelected()" (change)="toggleSelectAll($event)">
                     <label class="form-check-label" for="selectAllBottom">
-                        Select All (3 Items)
+                        Select All ({{selectedItemsCount()}} Items)
                     </label>
                 </div>
                 <div>
-                    <button class="btn btn-outline-danger me-2">Remove Selected</button>
-                    <button class="btn btn-outline-secondary">Move to Wishlist</button>
+                    <button class="btn btn-outline-danger me-2" (click)="removeSelected()">Remove Selected</button>
+                    <button class="btn btn-outline-secondary" (click)="moveToWishlist()">Move to Wishlist</button>
                 </div>
             </div>
         </div>
@@ -186,27 +106,27 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex justify-content-between mb-2">
-                        <span>Subtotal (3 items)</span>
-                        <span class="fw-bold">$579.85</span>
+                        <span>Subtotal ({{cartItems.length}} items)</span>
+                        <span class="fw-bold">${{calculateSubtotal().toFixed(2)}}</span>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span>Shipping Fee</span>
-                        <span class="fw-bold">$25.00</span>
+                        <span class="fw-bold">${{shippingFee.toFixed(2)}}</span>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span>Tax</span>
-                        <span class="fw-bold">$34.79</span>
+                        <span class="fw-bold">${{calculateTax().toFixed(2)}}</span>
                     </div>
                     <div class="d-flex justify-content-between mb-3">
                         <span>Discount</span>
-                        <span class="fw-bold text-success">-$20.00</span>
+                        <span class="fw-bold text-success">-${{discount.toFixed(2)}}</span>
                     </div>
                     <hr>
                     <div class="d-flex justify-content-between mb-3">
                         <span class="fw-bold">Total</span>
-                        <span class="fw-bold text-orange">$619.64</span>
+                        <span class="fw-bold text-orange">${{calculateTotal().toFixed(2)}}</span>
                     </div>
-                    <button class="btn btn-orange btn-lg w-100 mb-3">Proceed to Checkout</button>
+                    <button class="btn btn-orange btn-lg w-100 mb-3" (click)="checkout()">Proceed to Checkout</button>
                     <div class="text-center small text-muted">
                         <i class="fas fa-lock me-1"></i> Secure Payment
                     </div>
@@ -220,11 +140,11 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex flex-wrap">
-                        <img src="https://via.placeholder.com/50x30?text=Visa" class="img-thumbnail me-2 mb-2" alt="Visa">
-                        <img src="https://via.placeholder.com/50x30?text=MC" class="img-thumbnail me-2 mb-2" alt="Mastercard">
-                        <img src="https://via.placeholder.com/50x30?text=PP" class="img-thumbnail me-2 mb-2" alt="PayPal">
-                        <img src="https://via.placeholder.com/50x30?text=AE" class="img-thumbnail me-2 mb-2" alt="Amex">
-                        <img src="https://via.placeholder.com/50x30?text=AliPay" class="img-thumbnail me-2 mb-2" alt="Alipay">
+                        <img *ngFor="let method of paymentMethods" 
+                             [src]="method.image" 
+                             class="img-thumbnail me-2 mb-2" 
+                             [alt]="method.name" 
+                             style="width: 50px; height: 30px;">
                     </div>
                 </div>
             </div>
@@ -239,83 +159,41 @@
             <div class="col-md-4 mb-3">
                 <h6 class="fw-bold">Customer Service</h6>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-decoration-none text-muted">Help Center</a></li>
-                    <li><a href="#" class="text-decoration-none text-muted">Contact Us</a></li>
-                    <li><a href="#" class="text-decoration-none text-muted">Submit a Dispute</a></li>
+                    <li><a routerLink="/help" class="text-decoration-none text-muted">Help Center</a></li>
+                    <li><a routerLink="/contact" class="text-decoration-none text-muted">Contact Us</a></li>
+                    <li><a routerLink="/dispute" class="text-decoration-none text-muted">Submit a Dispute</a></li>
                 </ul>
             </div>
             <div class="col-md-4 mb-3">
                 <h6 class="fw-bold">About GlobalB2B</h6>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-decoration-none text-muted">About Us</a></li>
-                    <li><a href="#" class="text-decoration-none text-muted">Terms of Use</a></li>
-                    <li><a href="#" class="text-decoration-none text-muted">Privacy Policy</a></li>
+                    <li><a routerLink="/about" class="text-decoration-none text-muted">About Us</a></li>
+                    <li><a routerLink="/terms" class="text-decoration-none text-muted">Terms of Use</a></li>
+                    <li><a routerLink="/privacy" class="text-decoration-none text-muted">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-md-4 mb-3">
                 <h6 class="fw-bold">Stay Connected</h6>
                 <div class="mb-3">
-                    <a href="#" class="text-decoration-none text-muted me-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-decoration-none text-muted me-2"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-decoration-none text-muted me-2"><i class="fab fa-instagram"></i></a>
+                    <a *ngFor="let social of socialLinks" 
+                       [href]="social.url" 
+                       class="text-decoration-none text-muted me-2">
+                        <i [class]="social.icon"></i>
+                    </a>
                 </div>
                 <h6 class="fw-bold">Download App</h6>
                 <div>
-                    <a href="#" class="d-inline-block me-2">
-                        <img src="https://via.placeholder.com/100x35?text=App+Store" alt="App Store" style="height: 35px;">
-                    </a>
-                    <a href="#" class="d-inline-block">
-                        <img src="https://via.placeholder.com/100x35?text=Google+Play" alt="Google Play" style="height: 35px;">
+                    <a *ngFor="let app of appLinks" 
+                       [href]="app.url" 
+                       class="d-inline-block me-2">
+                        <img [src]="app.image" [alt]="app.name" style="height: 35px;">
                     </a>
                 </div>
             </div>
         </div>
         <hr>
         <div class="text-center text-muted small">
-            © 2023 GlobalB2B. All Rights Reserved.
+            © {{currentYear}} GlobalB2B. All Rights Reserved.
         </div>
     </div>
 </footer>
-
-<!-- Bootstrap 5.3.0 JS Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Quantity adjustment functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        // Decrease quantity
-        document.querySelectorAll('.btn-outline-secondary').forEach(btn => {
-            if (btn.textContent === '-') {
-                btn.addEventListener('click', function() {
-                    const input = this.nextElementSibling;
-                    if (input.value > 1) {
-                        input.value = parseInt(input.value) - 1;
-                    }
-                });
-            }
-            // Increase quantity
-            if (btn.textContent === '+') {
-                btn.addEventListener('click', function() {
-                    const input = this.previousElementSibling;
-                    input.value = parseInt(input.value) + 1;
-                });
-            }
-        });
-        
-        // Select all functionality
-        document.getElementById('selectAll').addEventListener('change', function() {
-            const checkboxes = document.querySelectorAll('.form-check-input:not(#selectAll)');
-            checkboxes.forEach(checkbox => {
-                checkbox.checked = this.checked;
-            });
-            document.getElementById('selectAllBottom').checked = this.checked;
-        });
-        
-        document.getElementById('selectAllBottom').addEventListener('change', function() {
-            const checkboxes = document.querySelectorAll('.form-check-input:not(#selectAllBottom)');
-            checkboxes.forEach(checkbox => {
-                checkbox.checked = this.checked;
-            });
-            document.getElementById('selectAll').checked = this.checked;
-        });
-    });
-</script>

@@ -21,35 +21,54 @@ import { CartComponent } from './customer/cart/cart.component';
 import { DeliverToComponent } from './customer/deliver-to/deliver-to.component';
 import { OrderProtectionComponent } from './customer/order-protection/order-protection.component';
 import { GoldSuppliersComponent } from './customer/gold-suppliers/gold-suppliers.component';
-import { TradeAssuranceComponent } from './customer/trade-assurance/trade-assurance.component';
-import { TradeShowsComponent } from './customer/trade-shows/trade-shows.component';
+import { TradeAssuranceComponent } from './customer/trade/trade-assurance/trade-assurance.component';
+import { MessageContainerComponent } from './customer/messages/message-container/message-container.component';
+import { FavouriteComponent } from './customer/favourite/favourite.component';
+import { AssurenceFormComponent } from './customer/trade/assurence-form/assurence-form.component';
+import { ExhibitionRegistrationComponent } from './customer/trade/exhibition-registration/exhibition-registration.component';
+import { ShippingRadyComponent } from './customer/shipping/shipping-rady/shipping-rady.component';
+import { TradeShowsComponent } from './customer/trade/trade-shows/trade-shows.component';
+import { PaymentMethodComponent } from './product/payment-method/payment-method.component';
+
 
 const routes : Routes = [
 
     { path : " " , redirectTo : "admin-login", pathMatch: "full" },
-     { path : "home" , component : HomeComponent},
+     { path : "" , component : HomeComponent},
 
     { path : "admin-login", component : AdminLoginComponent},
     { path : "admin-dashboard", component : AdminDashboardComponent},
 
     { path:"buyer-dashboard",component:BayerDashboardComponent},
 
+
+//Users------
     { path: 'signup', component: SignupComponent },
     // { path: " ", redirectTo: 'login', pathMatch: 'full' },
     { path: "login", component: LoginComponent },
-    // { path : "supplier-dashboard",
-    //   component : SupplierDashboardComponent,
-    //   children: [
-    //     { path : "add-product",component : AddProductComponent},
-    //     // Default child route
-    //     { path: '', redirectTo: 'add-product', pathMatch: 'full'},
+
+    // Home page
+    { path : "gold-supplier", component : GoldSuppliersComponent},
+    { path : "trade-assurance", component : TradeAssuranceComponent},
+    { path : "trade-shows", component : TradeShowsComponent},
+    { path : "exhibition-registration", component : ExhibitionRegistrationComponent},
+    { path : "assurence-form", component : AssurenceFormComponent},
+
+    //Messages
+    { path: '', redirectTo: '/messages', pathMatch: 'full' },
+    { path: 'messages', component: MessageContainerComponent },
+    //Favourite
+    { path: 'favourite', component : FavouriteComponent},
+    //shipping
+    { path : "shipping-rady", component : ShippingRadyComponent},
    
-    //   ]    
-    // },
+
+
     { path: 'supplier-dashboard', component: SupplierDashboardComponent },
-    { path: 'add-jahangir', component: AddProductComponent },
+    { path: 'add-product', component: AddProductComponent },
     { path : 'product-details' , component : ProductDetailsComponent},
     { path : 'go-order', component : GoOrderComponent },
+    { path : "payment-method", component : PaymentMethodComponent },
     { path : "order-management" , component : OrderManagementComponent},
     { path : 'product-management', component : ProductsManagementComponent},
     { path : 'product-listings', component : ProductListingsComponent},
@@ -59,23 +78,16 @@ const routes : Routes = [
     { path : 'cart', component : CartComponent},
     { path : "deliver-to", component : DeliverToComponent},
     { path : "order-protection", component : OrderProtectionComponent },
-    { path : "gold-supplier", component : GoldSuppliersComponent},
-    { path : "trade-assurance", component : TradeAssuranceComponent},
-    { path : "trade-shows", component : TradeShowsComponent}
-
-
-
-
-    // {
-    //   path: 'parent',
-    //   component: ParentComponent,
-    //   children: [
-    //     { path: 'child1', component: Child1Component },
-    //     { path: 'child2', component: Child2Component },
-        
-    //   ]
-    // }
-
+//cart
+{ path: 'products', component: CartComponent },
+{ path: 'help', component: CartComponent },
+{ path: 'contact', component: CartComponent },
+{ path: 'dispute', component: CartComponent },
+{ path: 'about', component: CartComponent },
+{ path: 'terms', component: CartComponent },
+{ path: 'privacy', component: CartComponent },
+{ path: '', redirectTo: '/', pathMatch: 'full'},
+//
 
   ];
   
