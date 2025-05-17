@@ -1,211 +1,243 @@
 <div class="container-fluid py-4">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="card shadow-lg">
-          <div class="card-header bg-primary text-white">
-            <h3 class="mb-0"><i class="fas fa-box-open me-2"></i>Add New Product</h3>
-          </div>
-          <div class="card-body">
-            <form>
-              <!-- Product Basic Information -->
-              <div class="mb-4 border-bottom pb-3">
-                <h5 class="text-primary"><i class="fas fa-info-circle me-2"></i>Basic Information</h5>
-                <div class="row g-3 mt-2">
-                  <div class="col-md-6">
-                    <label for="productName" class="form-label">Product Name <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control form-control-lg" id="productName" required>
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0"><i class="fas fa-box-open me-2"></i>Add New Product</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <!-- Product Basic Information -->
+            <div class="mb-4 border-bottom pb-3">
+              <h5 class="text-primary"><i class="fas fa-info-circle me-2"></i>Basic Information</h5>
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <label for="productName" class="form-label">Product Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control form-control-lg" id="productName" 
+                         formControlName="name" [ngClass]="{
+                           'is-invalid': productForm.get('name')?.invalid && 
+                                        (productForm.get('name')?.dirty || productForm.get('name')?.touched)
+                         }">
+                  <div class="invalid-feedback" *ngIf="productForm.get('name')?.errors?.['required']">
+                    Product name is required
                   </div>
-                  <div class="col-md-6">
-                    <label for="productCategory" class="form-label">Category <span class="text-danger">*</span></label>
-                    <select class="form-select form-select-lg" id="productCategory" required>
-                      <option value="" selected disabled>Select Category</option>
-                      <option value="electronics">Electronics</option>
-                      <option value="clothing">Clothing</option>
-                      <option value="machinery">Machinery</option>
-                      <option value="home">Home & Garden</option>
-                    </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="productCategory" class="form-label">Category <span class="text-danger">*</span></label>
+                  <select class="form-select form-select-lg" id="productCategory" 
+                          formControlName="category" [ngClass]="{
+                            'is-invalid': productForm.get('category')?.invalid && 
+                                         (productForm.get('category')?.dirty || productForm.get('category')?.touched)
+                          }">
+                    <option value="" selected disabled>Select Category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="machinery">Machinery</option>
+                    <option value="home">Home & Garden</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="productForm.get('category')?.errors?.['required']">
+                    Category is required
                   </div>
-                  <div class="col-md-12">
-                    <label for="productDescription" class="form-label">Description <span class="text-danger">*</span></label>
-                    <textarea class="form-control" id="productDescription" rows="4" required></textarea>
+                </div>
+                <div class="col-md-12">
+                  <label for="productDescription" class="form-label">Description <span class="text-danger">*</span></label>
+                  <textarea class="form-control" id="productDescription" rows="4" 
+                            formControlName="description" [ngClass]="{
+                              'is-invalid': productForm.get('description')?.invalid && 
+                                           (productForm.get('description')?.dirty || productForm.get('description')?.touched)
+                            }"></textarea>
+                  <div class="invalid-feedback" *ngIf="productForm.get('description')?.errors?.['required']">
+                    Description is required
                   </div>
                 </div>
               </div>
-  
-              <!-- Product Images -->
-              <div class="mb-4 border-bottom pb-3">
-                <h5 class="text-primary"><i class="fas fa-images me-2"></i>Product Images</h5>
-                <div class="alert alert-info mt-3">
-                  <i class="fas fa-info-circle me-2"></i>Upload high-quality images (Max 10 images, first image will be main display)
-                </div>
-                <div class="dropzone mt-3 p-4 border rounded bg-light text-center">
-                  <input type="file" id="productImages" class="d-none" multiple accept="image/*">
-                  <label for="productImages" class="btn btn-outline-primary">
-                    <i class="fas fa-cloud-upload-alt me-2"></i>Click to Upload Images
-                  </label>
-                  <div class="mt-2 text-muted">or drag & drop files here</div>
-                  <div class="preview-container mt-3 row g-2" id="imagePreview"></div>
-                </div>
+            </div>
+
+            <!-- Product Images -->
+            <div class="mb-4 border-bottom pb-3">
+              <h5 class="text-primary"><i class="fas fa-images me-2"></i>Product Images</h5>
+              <div class="alert alert-info mt-3">
+                <i class="fas fa-info-circle me-2"></i>Upload high-quality images (Max 10 images, first image will be main display)
               </div>
-  
-              <!-- Pricing & Inventory -->
-              <div class="mb-4 border-bottom pb-3">
-                <h5 class="text-primary"><i class="fas fa-tags me-2"></i>Pricing & Inventory</h5>
-                <div class="row g-3 mt-2">
-                  <div class="col-md-4">
-                    <label for="price" class="form-label">Price (USD) <span class="text-danger">*</span></label>
-                    <div class="input-group">
-                      <span class="input-group-text">$</span>
-                      <input type="number" class="form-control" id="price" step="0.01" min="0" required>
+              <div class="dropzone mt-3 p-4 border rounded bg-light text-center"
+                   (click)="fileInput.click()">
+                <input #fileInput type="file" id="productImages" class="d-none" 
+                       multiple accept="image/*" (change)="onFileChange($event)">
+                <label class="btn btn-outline-primary mb-0">
+                  <i class="fas fa-cloud-upload-alt me-2"></i>Click to Upload Images
+                </label>
+                <div class="mt-2 text-muted">or drag & drop files here</div>
+                <div class="preview-container mt-3 row g-2">
+                  <div class="col-6 col-md-3 position-relative" *ngFor="let preview of imagePreviews; let i = index">
+                    <div class="ratio ratio-1x1 border rounded overflow-hidden">
+                      <img [src]="preview" class="img-fluid object-fit-cover" alt="Preview">
                     </div>
-                  </div>
-                  <div class="col-md-4">
-                    <label for="minOrder" class="form-label">Minimum Order Quantity <span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" id="minOrder" min="1" value="1" required>
-                  </div>
-                  <div class="col-md-4">
-                    <label for="stock" class="form-label">Stock Quantity <span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" id="stock" min="0" required>
+                    <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-1 remove-img"
+                            (click)="removeImage(i); $event.stopPropagation()">
+                      <i class="fas fa-times"></i>
+                    </button>
                   </div>
                 </div>
               </div>
-  
-              <!-- Product Specifications -->
-              <div class="mb-4 border-bottom pb-3">
-                <h5 class="text-primary"><i class="fas fa-list-alt me-2"></i>Product Specifications</h5>
-                <div id="specificationsContainer">
-                  <div class="row g-3 mt-2 specification-row">
-                    <div class="col-md-5">
-                      <input type="text" class="form-control" placeholder="Specification Name (e.g., Material)">
-                    </div>
-                    <div class="col-md-5">
-                      <input type="text" class="form-control" placeholder="Specification Value (e.g., Cotton 100%)">
-                    </div>
-                    <div class="col-md-2">
-                      <button type="button" class="btn btn-danger w-100 remove-spec">
-                        <i class="fas fa-trash"></i>
-                      </button>
-                    </div>
+            </div>
+
+            <!-- Pricing & Inventory -->
+            <div class="mb-4 border-bottom pb-3">
+              <h5 class="text-primary"><i class="fas fa-tags me-2"></i>Pricing & Inventory</h5>
+              <div class="row g-3 mt-2">
+                <div class="col-md-4">
+                  <label for="price" class="form-label">Price (USD) <span class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" id="price" step="0.01" min="0"
+                           formControlName="price" [ngClass]="{
+                             'is-invalid': productForm.get('price')?.invalid && 
+                                          (productForm.get('price')?.dirty || productForm.get('price')?.touched)
+                           }">
+                  </div>
+                  <div class="invalid-feedback" *ngIf="productForm.get('price')?.errors?.['required']">
+                    Price is required
+                  </div>
+                  <div class="invalid-feedback" *ngIf="productForm.get('price')?.errors?.['min']">
+                    Price must be positive
                   </div>
                 </div>
-                <button type="button" class="btn btn-outline-primary mt-3" id="addSpec">
-                  <i class="fas fa-plus me-2"></i>Add Specification
-                </button>
-              </div>
-  
-              <!-- Shipping Information -->
-              <div class="mb-4">
-                <h5 class="text-primary"><i class="fas fa-truck me-2"></i>Shipping Information</h5>
-                <div class="row g-3 mt-2">
-                  <div class="col-md-4">
-                    <label for="weight" class="form-label">Weight (kg) <span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" id="weight" step="0.01" min="0" required>
+                <div class="col-md-4">
+                  <label for="minOrder" class="form-label">Minimum Order Quantity <span class="text-danger">*</span></label>
+                  <input type="number" class="form-control" id="minOrder" min="1" 
+                         formControlName="minOrderQuantity" [ngClass]="{
+                           'is-invalid': productForm.get('minOrderQuantity')?.invalid && 
+                                        (productForm.get('minOrderQuantity')?.dirty || productForm.get('minOrderQuantity')?.touched)
+                         }">
+                  <div class="invalid-feedback" *ngIf="productForm.get('minOrderQuantity')?.errors?.['required']">
+                    Minimum order is required
                   </div>
-                  <div class="col-md-4">
-                    <label for="packageSize" class="form-label">Package Size (cm) <span class="text-danger">*</span></label>
-                    <div class="input-group">
-                      <input type="number" class="form-control" placeholder="Length" required>
-                      <input type="number" class="form-control" placeholder="Width" required>
-                      <input type="number" class="form-control" placeholder="Height" required>
-                    </div>
+                  <div class="invalid-feedback" *ngIf="productForm.get('minOrderQuantity')?.errors?.['min']">
+                    Minimum order must be at least 1
                   </div>
-                  <div class="col-md-4">
-                    <label for="shippingFrom" class="form-label">Shipping From <span class="text-danger">*</span></label>
-                    <select class="form-select" id="shippingFrom" required>
-                      <option value="" selected disabled>Select Country</option>
-                      <option value="china">China</option>
-                      <option value="usa">United States</option>
-                      <option value="germany">Germany</option>
-                    </select>
+                </div>
+                <div class="col-md-4">
+                  <label for="stock" class="form-label">Stock Quantity <span class="text-danger">*</span></label>
+                  <input type="number" class="form-control" id="stock" min="0"
+                         formControlName="stockQuantity" [ngClass]="{
+                           'is-invalid': productForm.get('stockQuantity')?.invalid && 
+                                        (productForm.get('stockQuantity')?.dirty || productForm.get('stockQuantity')?.touched)
+                         }">
+                  <div class="invalid-feedback" *ngIf="productForm.get('stockQuantity')?.errors?.['required']">
+                    Stock quantity is required
+                  </div>
+                  <div class="invalid-feedback" *ngIf="productForm.get('stockQuantity')?.errors?.['min']">
+                    Stock cannot be negative
                   </div>
                 </div>
               </div>
-  
-              <div class="d-flex justify-content-between mt-4">
-                <button type="button" class="btn btn-outline-secondary">
-                  <i class="fas fa-save me-2"></i>Save Draft
-                </button>
-                <button type="submit" class="btn btn-primary px-4">
-                  <i class="fas fa-check-circle me-2"></i>Submit Product
-                </button>
+            </div>
+
+            <!-- Product Specifications -->
+            <div class="mb-4 border-bottom pb-3">
+              <h5 class="text-primary"><i class="fas fa-list-alt me-2"></i>Product Specifications</h5>
+              <div formArrayName="specifications" id="specificationsContainer">
+                <div class="row g-3 mt-2 specification-row" *ngFor="let spec of specifications.controls; let i = index" [formGroupName]="i">
+                  <div class="col-md-5">
+                    <input type="text" class="form-control" placeholder="Specification Name (e.g., Material)"
+                           formControlName="name">
+                  </div>
+                  <div class="col-md-5">
+                    <input type="text" class="form-control" placeholder="Specification Value (e.g., Cotton 100%)"
+                           formControlName="value">
+                  </div>
+                  <div class="col-md-2">
+                    <button type="button" class="btn btn-danger w-100 remove-spec"
+                            (click)="removeSpecification(i)" [disabled]="specifications.length <= 1">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
-            </form>
-          </div>
+              <button type="button" class="btn btn-outline-primary mt-3" (click)="addSpecification()">
+                <i class="fas fa-plus me-2"></i>Add Specification
+              </button>
+            </div>
+
+            <!-- Shipping Information -->
+            <div class="mb-4">
+              <h5 class="text-primary"><i class="fas fa-truck me-2"></i>Shipping Information</h5>
+              <div class="row g-3 mt-2">
+                <div class="col-md-4">
+                  <label for="weight" class="form-label">Weight (kg) <span class="text-danger">*</span></label>
+                  <input type="number" class="form-control" id="weight" step="0.01" min="0"
+                         formControlName="weight" [ngClass]="{
+                           'is-invalid': productForm.get('weight')?.invalid && 
+                                        (productForm.get('weight')?.dirty || productForm.get('weight')?.touched)
+                         }">
+                  <div class="invalid-feedback" *ngIf="productForm.get('weight')?.errors?.['required']">
+                    Weight is required
+                  </div>
+                  <div class="invalid-feedback" *ngIf="productForm.get('weight')?.errors?.['min']">
+                    Weight must be positive
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Package Size (cm) <span class="text-danger">*</span></label>
+                  <div class="input-group" formGroupName="packageSize">
+                    <input type="number" class="form-control" placeholder="Length" 
+                           formControlName="length" [ngClass]="{
+                             'is-invalid': productForm.get('packageSize.length')?.invalid && 
+                                          (productForm.get('packageSize.length')?.dirty || productForm.get('packageSize.length')?.touched)
+                           }">
+                    <input type="number" class="form-control" placeholder="Width"
+                           formControlName="width" [ngClass]="{
+                             'is-invalid': productForm.get('packageSize.width')?.invalid && 
+                                          (productForm.get('packageSize.width')?.dirty || productForm.get('packageSize.width')?.touched)
+                           }">
+                    <input type="number" class="form-control" placeholder="Height"
+                           formControlName="height" [ngClass]="{
+                             'is-invalid': productForm.get('packageSize.height')?.invalid && 
+                                          (productForm.get('packageSize.height')?.dirty || productForm.get('packageSize.height')?.touched)
+                           }">
+                  </div>
+                  <div class="invalid-feedback" *ngIf="productForm.get('packageSize.length')?.errors?.['required'] ||
+                                                      productForm.get('packageSize.width')?.errors?.['required'] ||
+                                                      productForm.get('packageSize.height')?.errors?.['required']">
+                    All dimensions are required
+                  </div>
+                  <div class="invalid-feedback" *ngIf="productForm.get('packageSize.length')?.errors?.['min'] ||
+                                                      productForm.get('packageSize.width')?.errors?.['min'] ||
+                                                      productForm.get('packageSize.height')?.errors?.['min']">
+                    Dimensions must be positive
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="shippingFrom" class="form-label">Shipping From <span class="text-danger">*</span></label>
+                  <select class="form-select" id="shippingFrom"
+                          formControlName="shippingFrom" [ngClass]="{
+                            'is-invalid': productForm.get('shippingFrom')?.invalid && 
+                                         (productForm.get('shippingFrom')?.dirty || productForm.get('shippingFrom')?.touched)
+                          }">
+                    <option value="" selected disabled>Select Country</option>
+                    <option value="china">China</option>
+                    <option value="usa">United States</option>
+                    <option value="germany">Germany</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="productForm.get('shippingFrom')?.errors?.['required']">
+                    Shipping origin is required
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" class="btn btn-outline-secondary" (click)="onSaveDraft()" [disabled]="isSubmitting">
+                <i class="fas fa-save me-2"></i>Save Draft
+              </button>
+              <button type="submit" class="btn btn-primary px-4" [disabled]="isSubmitting">
+                <i class="fas fa-check-circle me-2"></i>Submit Product
+                <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm ms-2"></span>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- JavaScript for dynamic functionality -->
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Add specification row
-    document.getElementById('addSpec').addEventListener('click', function() {
-      const container = document.getElementById('specificationsContainer');
-      const newRow = document.createElement('div');
-      newRow.className = 'row g-3 mt-2 specification-row';
-      newRow.innerHTML = `
-        <div class="col-md-5">
-          <input type="text" class="form-control" placeholder="Specification Name">
-        </div>
-        <div class="col-md-5">
-          <input type="text" class="form-control" placeholder="Specification Value">
-        </div>
-        <div class="col-md-2">
-          <button type="button" class="btn btn-danger w-100 remove-spec">
-            <i class="fas fa-trash"></i>
-          </button>
-        </div>
-      `;
-      container.appendChild(newRow);
-    });
-  
-    // Remove specification row
-    document.addEventListener('click', function(e) {
-      if (e.target.classList.contains('remove-spec') || e.target.parentElement.classList.contains('remove-spec')) {
-        const row = e.target.closest('.specification-row');
-        if (row && document.querySelectorAll('.specification-row').length > 1) {
-          row.remove();
-        }
-      }
-    });
-  
-    // Image preview functionality
-    const fileInput = document.getElementById('productImages');
-    const previewContainer = document.getElementById('imagePreview');
-    
-    fileInput.addEventListener('change', function() {
-      previewContainer.innerHTML = '';
-      if (this.files) {
-        Array.from(this.files).forEach(file => {
-          if (file.type.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-              const preview = document.createElement('div');
-              preview.className = 'col-6 col-md-3 position-relative';
-              preview.innerHTML = `
-                <div class="ratio ratio-1x1 border rounded overflow-hidden">
-                  <img src="${e.target.result}" class="img-fluid object-fit-cover" alt="Preview">
-                </div>
-                <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-1 remove-img">
-                  <i class="fas fa-times"></i>
-                </button>
-              `;
-              previewContainer.appendChild(preview);
-            };
-            reader.readAsDataURL(file);
-          }
-        });
-      }
-    });
-  
-    // Remove image preview
-    previewContainer.addEventListener('click', function(e) {
-      if (e.target.classList.contains('remove-img') || e.target.parentElement.classList.contains('remove-img')) {
-        e.target.closest('.col-6').remove();
-      }
-    });
-  });
-  </script>
-  
-  
+</div>

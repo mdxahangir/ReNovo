@@ -21,6 +21,7 @@ import { GoOrderComponent } from './product/go-order/go-order.component';
 import { OrderManagementComponent } from './admin/order-management/order-management.component';
 import { ProductsManagementComponent } from './admin/products-management/products-management.component';
 import { ProductListingsComponent } from './customer/supplier/product-listings/product-listings.component';
+
 import { PaymentTrackingComponent } from './customer/supplier/payment-tracking/payment-tracking.component';
 import { SellerPaymentComponent } from './customer/supplier/seller-payment/seller-payment.component';
 import { OrderProcessingComponent } from './customer/supplier/order-processing/order-processing.component';
@@ -40,6 +41,9 @@ import { AssurenceFormComponent } from './customer/trade/assurence-form/assurenc
 import { ExhibitionRegistrationComponent } from './customer/trade/exhibition-registration/exhibition-registration.component';
 import { ShippingRadyComponent } from './customer/shipping/shipping-rady/shipping-rady.component';
 import { PaymentMethodComponent } from './product/payment-method/payment-method.component';
+import { PayToSupplierComponent } from './admin/pay-to-supplier/pay-to-supplier.component';
+import { SupplierProductComponent } from './customer/supplier/supplier-product/supplier-product.component';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +61,8 @@ import { PaymentMethodComponent } from './product/payment-method/payment-method.
     MarketingManagementComponent,
     AnalyticsManagementComponent,
     FinancialsManagementComponent,
-    SettingsManagementComponent, 
+    SettingsManagementComponent,
+    PayToSupplierComponent, 
     // Bayer
     BayerDashboardComponent,
     SignupComponent,
@@ -69,6 +74,8 @@ import { PaymentMethodComponent } from './product/payment-method/payment-method.
     PaymentTrackingComponent,
     ProductListingsComponent,
     SellerPaymentComponent,
+     SupplierProductComponent,
+   
     // Home products
     ProductDetailsComponent,
     GoOrderComponent,

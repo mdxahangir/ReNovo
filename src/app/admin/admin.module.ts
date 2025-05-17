@@ -12,14 +12,14 @@ import { MarketingManagementComponent } from './marketing-management/marketing-m
 import { AnalyticsManagementComponent } from './analytics-management/analytics-management.component';
 import { FinancialsManagementComponent } from './financials-management/financials-management.component';
 import { SettingsManagementComponent } from './settings-management/settings-management.component';
+import { PayToSupplierComponent } from './pay-to-supplier/pay-to-supplier.component';
 
 
 
 @NgModule({
   declarations: [  
 
-    
-
+   
   ],
   imports: [CommonModule, FormsModule, HttpClientModule],
   exports : [

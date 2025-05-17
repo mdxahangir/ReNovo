@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PaymentService {
+  getOrderDetails() {
+    throw new Error('Method not implemented.');
+  }
  private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }

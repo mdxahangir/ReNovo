@@ -1,92 +1,114 @@
 
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <div class="sidebar w-250 d-flex flex-column">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
             <div class="logo">
-                <i class="fas fa-store"></i> Ali<span>Seller</span>
+                <i class="fas fa-store"></i> B2B<span>Spplier</span>
             </div>
             <div class="flex-grow-1 overflow-auto p-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" routerLink="/dashboard">
+                        <a class="nav-link active" href="#">
                             <i class="fas fa-tachometer-alt"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/storefront-management">
+                        <a class="nav-link" href="#">
                             <i class="fas fa-box-open"></i> Storefront Management
                         </a>
-                        <ul class="sub-menu ps-4">
-                            <li><a routerLink="/product-listings" class="nav-link">Product Listings</a></li>
-                            <li><a routerLink="/store-customization" class="nav-link">Store Customization</a></li>
-                            <li><a routerLink="/inventory-control" class="nav-link">Inventory Control</a></li>
+                        <ul class="sub-menu">
+                            <li class="nav-item"><a href="#" class="nav-link">Product Listings</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Store Customization</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Inventory Control</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/order-management">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-shopping-cart"></i> Product Management
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item"><a routerLink="/add-product" class="nav-link">Add Product</a></li>
+                            <li class="nav-item"><a routerLink="/supplier-products-management" class="nav-link">Product Manage</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Shipping Integration</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <i class="fas fa-shopping-cart"></i> Order Management
                         </a>
-                        <ul class="sub-menu ps-4">
-                            <li><a routerLink="/order-processing" class="nav-link">Order Processing</a></li>
-                            <li><a routerLink="/payment-tracking" class="nav-link">Payment Tracking</a></li>
-                            <li><a routerLink="/shipping-integration" class="nav-link">Shipping Integration</a></li>
+                        <ul class="sub-menu">
+                            <li class="nav-item"><a href="#" class="nav-link">Order Processing</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Payment Tracking</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Shipping Integration</a></li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/customer-engagement">
+                        <a class="nav-link" href="#">
                             <i class="fas fa-users"></i> Customer Engagement
                         </a>
-                        <ul class="sub-menu ps-4">
-                            <li><a routerLink="/inquiry-management" class="nav-link">Inquiry Management</a></li>
-                            <li><a routerLink="/messaging-system" class="nav-link">Messaging System</a></li>
-                            <li><a routerLink="/feedback" class="nav-link">Feedback & Reviews</a></li>
+                        <ul class="sub-menu">
+                            <li class="nav-item"><a href="#" class="nav-link">Inquiry Management</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Messaging System</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Feedback & Reviews</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/analytics">
+                        <a class="nav-link" href="#">
                             <i class="fas fa-chart-line"></i> Analytics & Insights
                         </a>
-                        <ul class="sub-menu ps-4">
-                            <li><a routerLink="/performance-petrics" class="nav-link">Performance Metrics</a></li>
-                            <li><a routerLink="/buyer-behavior" class="nav-link">Buyer Behavior</a></li>
-                            <li><a routerLink="/market-trends" class="nav-link">Market Trends</a></li>
+                        <ul class="sub-menu">
+                            <li class="nav-item"><a href="#" class="nav-link">Performance Metrics</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Buyer Behavior</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Market Trends</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/marketing">
+                        <a class="nav-link" href="#">
                             <i class="fas fa-bullhorn"></i> Marketing & Promotion
                         </a>
-                        <ul class="sub-menu ps-4">
-                            <li><a routerLink="/advertising-tools" class="nav-link">Advertising Tools</a></li>
-                            <li><a routerLink="/promotional-campaigns" class="nav-link">Promotional Campaigns</a></li>
-                            <li><a routerLink="/seo-optimization" class="nav-link">SEO Optimization</a></li>
+                        <ul class="sub-menu">
+                            <li class="nav-item"><a href="#" class="nav-link">Advertising Tools</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Promotional Campaigns</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">SEO Optimization</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/account">
+                        <a class="nav-link" href="#">
                             <i class="fas fa-user-cog"></i> Account & Compliance
                         </a>
-                        <ul class="sub-menu ps-4">
-                            <li><a routerLink="/profile-settings" class="nav-link">Profile Settings</a></li>
-                            <li><a routerLink="/verification" class="nav-link">Verification</a></li>
-                            <li><a routerLink="/compliance-monitoring" class="nav-link">Compliance Monitoring</a></li>
+                        <ul class="sub-menu">
+                            <li class="nav-item"><a href="#" class="nav-link">Profile Settings</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Verification</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Compliance Monitoring</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/support-resource">
+                        <a class="nav-link" href="#">
                             <i class="fas fa-question-circle"></i> Support & Resources
                         </a>
-                        <ul class="sub-menu ps-4">
-                            <li><a routerLink="/help-center" class="nav-link">Help Center</a></li>
-                            <li><a routerLink="/seller-training" class="nav-link">Seller Training</a></li>
-                            <li><a routerLink="/community-forums" class="nav-link">Community Forums</a></li>
+                        <ul class="sub-menu">
+                            <li class="nav-item"><a href="#" class="nav-link">Help Center</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Seller Training</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Community Forums</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
-        </div>
-
-        <!-- Main Content -->
+            
+            <!-- User profile at bottom -->
+            <div class="p-3 border-top">
+                <div class="d-flex align-items-center">
+                    <img src="https://via.placeholder.com/40" alt="User" class="rounded-circle me-2" width="40" height="40">
+                    <div>
+                        <div class="fw-bold">Supplier Name</div>
+                        <small class="text-muted">Premium Seller</small>
+                    </div>
+                </div>
+            </div>
+        </nav>
+ <div class="d-flex">
+   
+        <!-- Main content area -->
         <div class="main-content flex-grow-1">
             <!-- Top Bar -->
             <div class="top-bar d-flex justify-content-between align-items-center">
@@ -106,19 +128,16 @@
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> Profile</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Settings</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Logout</a>
-                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+        
             <!-- Stats Cards -->
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 mb-4">
                     <div class="card stat-card">
                         <div class="value">1,248</div>
                         <div class="label">Total Products</div>
@@ -127,7 +146,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 mb-4">
                     <div class="card stat-card">
                         <div class="value">326</div>
                         <div class="label">New Orders</div>
@@ -136,7 +155,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 mb-4">
                     <div class="card stat-card">
                         <div class="value">$24,580</div>
                         <div class="label">Revenue</div>
@@ -145,7 +164,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 mb-4">
                     <div class="card stat-card">
                         <div class="value">94%</div>
                         <div class="label">Positive Feedback</div>
@@ -157,8 +176,8 @@
             </div>
 
             <!-- Recent Orders -->
-            <div class="row mt-4">
-                <div class="col-md-8">
+            <div class="row mt-2">
+                <div class="col-md-8 mb-4">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">Recent Orders</h5>
@@ -226,37 +245,16 @@
                 </div>
 
                 <!-- Quick Actions -->
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-header">
                             <h5 class="mb-0">Quick Actions</h5>
                         </div>
                         <div class="card-body">
                             <div class="d-grid gap-2">
-                                <!-- <button  class="btn btn-alibaba mb-2">
+                                <a routerLink="/add-product" class="btn btn-alibaba mb-2">
                                     <i class="fas fa-plus me-2"></i> Add New Product
-                                </button> -->
-                                <!-- <button class="btn btn-alibaba mb-2" [routerLink]="['supplier-dashboard']">
-                                    <i class="fas fa-plus me-2"></i> Add New Product
-                                  </button> -->
-
-                                  <!-- <button class="btn btn-alibaba mb-2" [routerLink]="['supplier-dashboard']">
-                                    <i class="fas fa-plus me-2"></i> Add New Product
-                                  </button> -->
-
-                                  <!-- <button class="btn btn-alibaba mb-2" [routerLink]="['supplier-dashboard']">
-                                    <i class="fas fa-plus me-2"></i> Add New Product
-                                  </button> -->
-
-                                  <a class="btn btn-alibaba mb-2" routerLink="/add-jahangir">
-                                    <i class="fas fa-plus me-2"></i> Add New Product
-                                  </a>
-
-                                  <!-- <a routerLink="/home" class="btn btn-light btn-sm">
-                                    <i class="fas fa-user-plus me-1"></i>
-                                    <span>Join Free</span>
-                                </a> -->
-                                
+                                </a>
                                 <button class="btn btn-outline-primary mb-2">
                                     <i class="fas fa-bullhorn me-2"></i> Create Promotion
                                 </button>
@@ -282,7 +280,7 @@
                         <div class="card-body">
                             <div class="d-flex mb-3">
                                 <div class="flex-shrink-0">
-                                    <img src="https://via.placeholder.com/40" class="rounded-circle" alt="...">
+                                    <img src="https://via.placeholder.com/40" class="rounded-circle" alt="..." width="40" height="40">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     <h6 class="mb-0">Global Trading Co.</h6>
@@ -292,7 +290,7 @@
                             </div>
                             <div class="d-flex mb-3">
                                 <div class="flex-shrink-0">
-                                    <img src="https://via.placeholder.com/40" class="rounded-circle" alt="...">
+                                    <img src="https://via.placeholder.com/40" class="rounded-circle" alt="..." width="40" height="40">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     <h6 class="mb-0">Ocean Imports</h6>
@@ -302,7 +300,7 @@
                             </div>
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
-                                    <img src="https://via.placeholder.com/40" class="rounded-circle" alt="...">
+                                    <img src="https://via.placeholder.com/40" class="rounded-circle" alt="..." width="40" height="40">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     <h6 class="mb-0">Euro Retail</h6>
@@ -316,7 +314,7 @@
             </div>
 
             <!-- Product Performance -->
-            <div class="row mt-4">
+            <div class="row mt-2">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center">
@@ -346,8 +344,7 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <img src="https://via.placeholder.com/40" class="rounded me-2"
-                                                        alt="...">
+                                                    <img src="https://via.placeholder.com/40" class="rounded me-2" width="40" height="40" alt="...">
                                                     <div>Industrial Air Compressor</div>
                                                 </div>
                                             </td>
@@ -360,8 +357,7 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <img src="https://via.placeholder.com/40" class="rounded me-2"
-                                                        alt="...">
+                                                    <img src="https://via.placeholder.com/40" class="rounded me-2" width="40" height="40" alt="...">
                                                     <div>Hydraulic Power Unit</div>
                                                 </div>
                                             </td>
@@ -374,8 +370,7 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <img src="https://via.placeholder.com/40" class="rounded me-2"
-                                                        alt="...">
+                                                    <img src="https://via.placeholder.com/40" class="rounded me-2" width="40" height="40" alt="...">
                                                     <div>CNC Machine Parts</div>
                                                 </div>
                                             </td>
@@ -388,8 +383,7 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <img src="https://via.placeholder.com/40" class="rounded me-2"
-                                                        alt="...">
+                                                    <img src="https://via.placeholder.com/40" class="rounded me-2" width="40" height="40" alt="...">
                                                     <div>Safety Gloves (100pk)</div>
                                                 </div>
                                             </td>
@@ -402,8 +396,7 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <img src="https://via.placeholder.com/40" class="rounded me-2"
-                                                        alt="...">
+                                                    <img src="https://via.placeholder.com/40" class="rounded me-2" width="40" height="40" alt="...">
                                                     <div>Steel Pipe Fittings</div>
                                                 </div>
                                             </td>
@@ -422,3 +415,6 @@
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap 5.3.0 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,115 +1,163 @@
-:root {
-    --primary-color: #FF6A00;
-    --secondary-color: #146EB4;
-    --dark-color: #1E1E1E;
-    --light-color: #F8F9FA;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
-}
-
-.sidebar {
-    background-color: white;
-    height: 100vh;
-    position: fixed;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.sidebar .nav-link {
-    color: var(--dark-color);
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
-.sidebar .nav-link:hover, .sidebar .nav-link.active {
-    background-color: rgba(255, 106, 0, 0.1);
-    color: var(--primary-color);
-}
-
-.sidebar .nav-link i {
-    width: 24px;
-    text-align: center;
-    margin-right: 10px;
-}
-
-.main-content {
-    margin-left: 250px;
-    padding: 20px;
-}
-
-.top-bar {
-    background-color: white;
-    padding: 15px 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card-header {
-    background-color: white;
-    border-bottom: 1px solid #eee;
-    font-weight: 600;
-}
-
-.stat-card {
-    text-align: center;
-    padding: 20px;
-}
-
-.stat-card .value {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.stat-card .label {
-    color: #666;
-    font-size: 14px;
-}
-
-.badge-alibaba {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.table th {
-    font-weight: 600;
-    color: #555;
-}
-
-.btn-alibaba {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-}
-
-.btn-alibaba:hover {
-    background-color: #e05d00;
-    color: white;
-}
-
-.logo {
-    font-weight: 700;
-    font-size: 22px;
-    color: var(--primary-color);
-    padding: 15px 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.logo span {
-    color: var(--secondary-color);
-}
+        :root {
+            --alibaba-orange: #FF6A00;
+            --sidebar-width: 250px;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        /* Sidebar styling */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            background-color: white;
+            border-right: 1px solid #e8e8e8;
+            z-index: 1000;
+        }
+        
+        .logo {
+            padding: 1.5rem 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        .logo span {
+            color: var(--alibaba-orange);
+        }
+        
+        .nav-link {
+            color: #666;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-bottom: 2px;
+            font-size: 0.95rem;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background-color: #f5f5f5;
+            color: var(--alibaba-orange);
+        }
+        
+        .nav-link i {
+            width: 1.5rem;
+            text-align: center;
+            margin-right: 0.5rem;
+            color: #999;
+        }
+        
+        .nav-link.active i, .nav-link:hover i {
+            color: var(--alibaba-orange);
+        }
+        
+        .sub-menu {
+            list-style: none;
+            margin-top: 0.25rem;
+            padding-left: 0;
+        }
+        
+        .sub-menu .nav-link {
+            padding-left: 2.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Main content area */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 1.5rem;
+        }
+        
+        /* Top bar */
+        .top-bar {
+            background-color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        /* Stats cards */
+        .stat-card {
+            border: none;
+            border-radius: 4px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        .stat-card .value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Tables */
+        .table th {
+            font-weight: 600;
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border-top: none;
+        }
+        
+        /* Buttons */
+        .btn-alibaba {
+            background-color: var(--alibaba-orange);
+            color: white;
+            border: none;
+        }
+        
+        .btn-alibaba:hover {
+            background-color: #e05d00;
+            color: white;
+        }
+        
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid #e8e8e8;
+            padding: 1rem 1.5rem;
+        }
+        
+        /* Badges */
+        .badge {
+            font-weight: 500;
+            padding: 0.35em 0.65em;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .top-bar {
+                margin-top: 1rem;
+            }
+        }

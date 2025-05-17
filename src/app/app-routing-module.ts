@@ -29,6 +29,8 @@ import { ExhibitionRegistrationComponent } from './customer/trade/exhibition-reg
 import { ShippingRadyComponent } from './customer/shipping/shipping-rady/shipping-rady.component';
 import { TradeShowsComponent } from './customer/trade/trade-shows/trade-shows.component';
 import { PaymentMethodComponent } from './product/payment-method/payment-method.component';
+import { PayToSupplierComponent } from './admin/pay-to-supplier/pay-to-supplier.component';
+import { SupplierProductComponent } from './customer/supplier/supplier-product/supplier-product.component';
 
 
 const routes : Routes = [
@@ -40,6 +42,7 @@ const routes : Routes = [
     { path : "admin-dashboard", component : AdminDashboardComponent},
 
     { path:"buyer-dashboard",component:BayerDashboardComponent},
+    { path : "pay-to-supplier", component : PayToSupplierComponent},
 
 
 //Users------
@@ -63,9 +66,14 @@ const routes : Routes = [
     { path : "shipping-rady", component : ShippingRadyComponent},
    
 
+//supplier
+    { path: 'supplier-dashboard',
+        component: SupplierDashboardComponent,
+     },
+     {path: "supplier-product", component:  SupplierProductComponent},
 
-    { path: 'supplier-dashboard', component: SupplierDashboardComponent },
-    { path: 'add-product', component: AddProductComponent },
+     { path: 'add-product', component: AddProductComponent },
+     
     { path : 'product-details' , component : ProductDetailsComponent},
     { path : 'go-order', component : GoOrderComponent },
     { path : "payment-method", component : PaymentMethodComponent },
